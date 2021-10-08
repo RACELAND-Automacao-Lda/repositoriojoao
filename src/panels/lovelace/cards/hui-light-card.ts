@@ -271,6 +271,7 @@ export class HuiLightCard extends LitElement implements LovelaceCard {
         text-align: center;
         --name-font-size: 1.2rem;
         --brightness-font-size: 1.2rem;
+        border-radius: 12px;
       }
 
       .more-info {
