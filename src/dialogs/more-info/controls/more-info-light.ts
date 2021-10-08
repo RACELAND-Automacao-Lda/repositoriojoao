@@ -18,26 +18,26 @@ import "./more-info-light2";
 import { LightEntity } from "../../../data/light";
 import type { HomeAssistant } from "../../../types";
 
-//incia-se o web component
+// incia-se o web component
 @customElement("more-info-light")
 class MoreInfoLight extends LitElement {
-  //elemento do html do homeassistant
+  // elemento do html do homeassistant
   @property({ attribute: false }) public hass!: HomeAssistant;
-  //busca state object do light entity
+  // busca state object do light entity
   @property({ attribute: false }) public stateObj?: LightEntity;
 
-  //configuração das custom cards
-  //config: any;
+  // configuração das custom cards
+  // config: any;
   actionRows: any = [];
   settings = false;
   settingsCustomCard = false;
   settingsPosition = "bottom";
 
-  //propriedades do home assistant
+  // propriedades do home assistant
   static get properties() {
     return {
       hass: {},
-      //config: {},
+      // config: {},
       active: {},
     };
   }
@@ -49,7 +49,7 @@ class MoreInfoLight extends LitElement {
       return html``;
     }
 
-    //variaveis relativas aos icons e as acçoes no home assistant
+    // variaveis relativas aos icons e as acçoes no home assistant
     var entity = this.stateObj?.entity_id;
     var actionsInARow = 3;
     var icon = this.stateObj?.attributes.icon;
@@ -59,7 +59,7 @@ class MoreInfoLight extends LitElement {
     var actionSize = "50px";
     var actions;
 
-    //o código abaixo faz com que debaixo do popup light aparecam 3 cores por defeito de modo a permitir o utilizador mudar a cor das luzes.
+    // o código abaixo faz com que debaixo do popup light aparecam 3 cores por defeito de modo a permitir o utilizador mudar a cor das luzes.
     if (this.stateObj.attributes.supported_color_modes[0] === "hs") {
       actions = [
         {
@@ -82,7 +82,7 @@ class MoreInfoLight extends LitElement {
         },
       ];
     }
-    //o código abaixo faz com a brightness das 3 cores escolhidas pelo developer tenham um valor especifico
+    // o código abaixo faz com a brightness das 3 cores escolhidas pelo developer tenham um valor especifico
     else if (
       this.stateObj.attributes.supported_color_modes[0] === "brightness"
     ) {
@@ -107,7 +107,7 @@ class MoreInfoLight extends LitElement {
         },
       ];
     }
-    //o código abaixo permite calcular o novo de linhas dependendo do tipo de aspeto que é escolhido pelo utilizadorqefegfgf
+    // o código abaixo permite calcular o novo de linhas dependendo do tipo de aspeto que é escolhido pelo utilizadorqefegfgf
     if (actions && actions.length > 0) {
       var numberOfRows = Math.ceil(actions.length / actionsInARow);
       for (var i = 0; i < numberOfRows; i++) {
@@ -126,7 +126,7 @@ class MoreInfoLight extends LitElement {
       }
     }
 
-    //o código em baixo define a aparência geral do more infor light
+    // o código em baixo define a aparência geral do more infor light
     var fullscreen = false;
     var brightnessWidth = "150px";
     var brightnessHeight = "400px";
@@ -383,12 +383,12 @@ class MoreInfoLight extends LitElement {
     return items;
   }
 
-  // _previewBrightness(value) {
-  //   // const el = this.shadowRoot?.getElementById("brightnessValue");
-  //   // console.log("PREVIEW",el);
+  //  _previewBrightness(value) {
+  //    //  const el = this.shadowRoot?.getElementById("brightnessValue");
+  //    //  console.log("PREVIEW",el);
 
-  //   // if(el) {el.innerText = (value == 0) ? "Off" : value + "%";}
-  // }
+  //    //  if(el) {el.innerText = (value == 0) ? "Off" : value + "%";}
+  //  }
 
   _setBrightness(state, value) {
     this.hass.callService("homeassistant", "turn_on", {
@@ -463,7 +463,7 @@ class MoreInfoLight extends LitElement {
         color = this._getDefaultColorForState();
       }
     }
-    //console.log("color", color);
+    // console.log("color", color);
     return color;
   }
 
@@ -477,8 +477,8 @@ class MoreInfoLight extends LitElement {
   }
 
   _getLightColorBasedOnTemperature(current, min, max) {
-    const high = new TinyColor("rgb(255, 160, 0)"); // orange-ish
-    const low = new TinyColor("rgb(166, 209, 255)"); // blue-ish
+    const high = new TinyColor("rgb(255, 160, 0)"); //  orange-ish
+    const low = new TinyColor("rgb(166, 209, 255)"); //  blue-ish
     const middle = new TinyColor("white");
     const mixAmount = ((current - min) / (max - min)) * 100;
     if (mixAmount < 50) {
@@ -506,14 +506,14 @@ class MoreInfoLight extends LitElement {
     return color;
   }
 
-  // setConfig(config) {
-  //   if (!config.entity) {
-  //     throw new Error("You need to define an entity");
-  //   }
-  //   this.config = config;
-  // }
+  //  setConfig(config) {
+  //    if (!config.entity) {
+  //      throw new Error("You need to define an entity");
+  //    }
+  //    this.config = config;
+  //  }
 
-  //o código em baixo defini o aspecto css do more-info-light
+  // o código em baixo defini o aspecto css do more-info-light
   static get styles() {
     return css`
         :host {
