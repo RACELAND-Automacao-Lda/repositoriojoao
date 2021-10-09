@@ -329,7 +329,7 @@ class HaSidebar extends LitElement {
     }
 
     else {
-      const pannelsToFilterByTitle = ['energy', 'map', 'logbook', 'history', 'RACELANDSHOP', 'media_browser']; //list of pannels to filter for normal users. In addition, pannels starting with "Homekit Infused" in the title are also filtered
+      const pannelsToFilterByTitle = ['energy', 'map', 'logbook', 'history', 'RACELANDSHOP']; //list of pannels to filter for normal users. In addition, pannels starting with "Homekit Infused" in the title are also filtered
       let beforeSpacerFiltered: PanelInfo[] = [];
       let afterSpacerFiltered: PanelInfo[] = [];
       if (this.hass.user?.is_admin) {
@@ -1061,4 +1061,3 @@ declare global {
     "ha-sidebar": HaSidebar;
   }
 }
-
