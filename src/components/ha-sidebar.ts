@@ -29,7 +29,7 @@ import { LocalStorage } from "../common/decorators/local-storage";
 import { fireEvent } from "../common/dom/fire_event";
 import { toggleAttribute } from "../common/dom/toggle_attribute";
 import { computeDomain } from "../common/entity/compute_domain";
-import { stringCompare } from "../common/string/compare";
+import { compare } from "../common/string/compare";
 import { computeRTL } from "../common/util/compute_rtl";
 import { ActionHandlerDetail } from "../data/lovelace";
 import {
@@ -41,6 +41,7 @@ import {
   getExternalConfig,
 } from "../external_app/external_config";
 import { actionHandler } from "../panels/lovelace/common/directives/action-handler-directive";
+import { SideBarView } from "../panels/lovelace/views/hui-sidebar-view";
 import { haStyleScrollbar } from "../resources/styles";
 import type { HomeAssistant, PanelInfo } from "../types";
 import "./ha-icon";
@@ -96,7 +97,7 @@ const defaultPanelSorter = (
   }
 
   if (aLovelace && bLovelace) {
-    return stringCompare(a.title!, b.title!);
+    return compare(a.title!, b.title!);
   }
   if (aLovelace && !bLovelace) {
     return -1;
@@ -118,7 +119,7 @@ const defaultPanelSorter = (
     return 1;
   }
   // both not built in, sort by title
-  return stringCompare(a.title!, b.title!);
+  return compare(a.title!, b.title!);
 };
 
 const computePanels = memoizeOne(
@@ -318,18 +319,43 @@ class HaSidebar extends LitElement {
         ? html`<mwc-button outlined @click=${this._closeEditMode}>
             ${this.hass.localize("ui.sidebar.done")}
           </mwc-button>`
-        : html`<div class="title">Raceland HA</div>`}
+        : html`<div class="title">Home Assistant</div>`}
     </div>`;
   }
 
+  private _racelandFilter(beforeSpacer, afterSpacer) {
+    if (this.hass.user?.is_owner) {
+      return [beforeSpacer, afterSpacer]
+    }
+
+    else {
+      const pannelsToFilterByTitle = ['energy', 'map', 'logbook', 'history', 'RACELANDSHOP', 'media_browser']; //list of pannels to filter for normal users. In addition, pannels starting with "Homekit Infused" in the title are also filtered
+      let beforeSpacerFiltered: PanelInfo[] = [];
+      let afterSpacerFiltered: PanelInfo[] = [];
+      if (this.hass.user?.is_admin) {
+        afterSpacerFiltered = afterSpacer.filter((sideBarDiv) => sideBarDiv.component_name !== 'developer-tools')
+      }
+      else {
+        afterSpacerFiltered = afterSpacer
+      }
+
+      beforeSpacerFiltered = beforeSpacer.filter((sideBarDiv) => !(pannelsToFilterByTitle.includes(sideBarDiv.title ? sideBarDiv.title : 'null')))
+      beforeSpacerFiltered = beforeSpacerFiltered.filter( (sideBarDiv) => !(sideBarDiv.title ? sideBarDiv.title.startsWith("Homekit Infused") : false)) //there is only one sidebar object without title (Overview), which we want to keep
+
+      return [beforeSpacerFiltered, afterSpacerFiltered]
+    }
+  }
+
   private _renderAllPanels() {
-    const [beforeSpacer, afterSpacer] = computePanels(
+    const [beforeSpacerPreFilter, afterSpacerPreFilter] = computePanels(
       this.hass.panels,
       this.hass.defaultPanel,
       this._panelOrder,
       this._hiddenPanels
     );
 
+
+    const [beforeSpacer, afterSpacer] = this._racelandFilter(beforeSpacerPreFilter, afterSpacerPreFilter)
     // prettier-ignore
     return html`
       <paper-listbox
@@ -1035,3 +1061,4 @@ declare global {
     "ha-sidebar": HaSidebar;
   }
 }
+
