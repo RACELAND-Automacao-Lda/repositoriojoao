@@ -60,7 +60,7 @@ export class HuiViewEditor extends LitElement {
     if (!this._config) {
       return "";
     }
-    return this._config.theme || "Backend-selected";
+    return this._config.theme || "dark_red";
   }
 
   get _type(): string {

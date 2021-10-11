@@ -231,7 +231,7 @@ class HaAutomationPicker extends LitElement {
       <hass-tabs-subpage-data-table
         .hass=${this.hass}
         .narrow=${this.narrow}
-        back-path="/config"
+        back-path="/lovelace"
         id="entity_id"
         .route=${this.route}
         .tabs=${configSections.automation}

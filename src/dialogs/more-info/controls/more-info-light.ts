@@ -53,7 +53,7 @@ class MoreInfoLight extends LitElement {
     var entity = this.stateObj?.entity_id;
     var actionsInARow = 3;
     var icon = this.stateObj?.attributes.icon;
-    var borderRadius = "12px";
+    var borderRadius = "40px";
     var onStates = ["on"];
     var offStates = ["off"];
     var actionSize = "50px";
@@ -90,20 +90,20 @@ class MoreInfoLight extends LitElement {
         {
           action: "call-service",
           service: "light.turn_on",
-          service_data: { entity_id: entity, brightness: 85 },
-          color: "#DCDCDC",
-        },
-        {
-          action: "call-service",
-          service: "light.turn_on",
-          service_data: { entity_id: entity, brightness: 190 },
+          service_data: { entity_id: entity, brightness: 65 },
           color: "#F0F0F0",
         },
         {
           action: "call-service",
           service: "light.turn_on",
-          service_data: { entity_id: entity, brightness: 255 },
-          color: "#FFFFFF",
+          service_data: { entity_id: entity, brightness: 120 },
+          color: "#DCDCDC"
+        },
+        {
+          action: "call-service",
+          service: "light.turn_on",
+          service_data: { entity_id: entity, brightness: 220 },
+          color: "#D1CFCF",
         },
       ];
     }

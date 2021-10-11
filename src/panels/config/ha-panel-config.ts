@@ -63,33 +63,34 @@ export const configSections: { [name: string]: PageNavigation[] } = {
       iconPath: mdiShape,
       core: true,
     },
-    {
-      component: "areas",
-      path: "/config/areas",
-      translationKey: "ui.panel.config.areas.caption",
-      iconPath: mdiSofa,
-      core: true,
-    },
+
   ],
   automation: [
     {
+    component: "areas",
+    path: "/config/areas",
+    translationKey: "ui.panel.config.areas.caption",
+    iconPath: mdiSofa,
+    core: true,
+  },
+    /*{
       component: "blueprint",
       path: "/config/blueprint",
       translationKey: "ui.panel.config.blueprint.caption",
       iconPath: mdiPaletteSwatch,
-    },
+    },*/
     {
       component: "automation",
       path: "/config/automation",
       translationKey: "ui.panel.config.automation.caption",
       iconPath: mdiRobot,
-    },
+    },/*
     {
       component: "scene",
       path: "/config/scene",
       translationKey: "ui.panel.config.scene.caption",
       iconPath: mdiPalette,
-    },
+    },*/
     {
       component: "script",
       path: "/config/script",

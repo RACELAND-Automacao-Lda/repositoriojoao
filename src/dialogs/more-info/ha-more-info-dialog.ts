@@ -122,7 +122,7 @@ export class MoreInfoDialog extends LitElement {
             <div slot="title" class="main-title" @click=${this._enlarge}>
               ${computeStateName(stateObj)}
             </div>
-            ${this.hass.user!.is_admin
+            <!-- ${this.hass.user!.is_admin
               ? html`
                   <mwc-icon-button
                     slot="actionItems"
@@ -134,7 +134,7 @@ export class MoreInfoDialog extends LitElement {
                     <ha-svg-icon .path=${mdiCog}></ha-svg-icon>
                   </mwc-icon-button>
                 `
-              : ""}
+              : ""} -->
             ${this.shouldShowEditIcon(domain, stateObj)
               ? html`
                   <mwc-icon-button
@@ -157,7 +157,7 @@ export class MoreInfoDialog extends LitElement {
                   .activeIndex=${this._currTabIndex}
                   @MDCTabBar:activated=${this._handleTabChanged}
                 >
-                  <mwc-tab
+                 <!-- <mwc-tab
                     .label=${this.hass.localize(
                       "ui.dialogs.more_info_control.details"
                     )}
@@ -166,7 +166,7 @@ export class MoreInfoDialog extends LitElement {
                     .label=${this.hass.localize(
                       "ui.dialogs.more_info_control.history"
                     )}
-                  ></mwc-tab>
+                  ></mwc-tab> -->
                 </mwc-tab-bar>
               `
             : ""}

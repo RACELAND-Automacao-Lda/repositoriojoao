@@ -41,6 +41,7 @@ import {
   getExternalConfig,
 } from "../external_app/external_config";
 import { actionHandler } from "../panels/lovelace/common/directives/action-handler-directive";
+import { SideBarView } from "../panels/lovelace/views/hui-sidebar-view";
 import { haStyleScrollbar } from "../resources/styles";
 import type { HomeAssistant, PanelInfo } from "../types";
 import "./ha-icon";
@@ -321,15 +322,39 @@ class HaSidebar extends LitElement {
         : html`<div class="title">Raceland HA</div>`}
     </div>`;
   }
+  private _racelandFilter(beforeSpacer, afterSpacer) {
+    if (this.hass.user?.is_owner) {
+      return [beforeSpacer, afterSpacer]
+    }
+
+    else {
+      const pannelsToFilterByTitle = ['energy', 'map', 'logbook', 'history', 'RACELANDSHOP', 'media_browser']; //list of pannels to filter for normal users. In addition, pannels starting with "Homekit Infused" in the title are also filtered
+      let beforeSpacerFiltered: PanelInfo[] = [];
+      let afterSpacerFiltered: PanelInfo[] = [];
+      if (this.hass.user?.is_admin) {
+        afterSpacerFiltered = afterSpacer.filter((sideBarDiv) => sideBarDiv.component_name !== 'developer-tools')
+      }
+      else {
+        afterSpacerFiltered = afterSpacer
+      }
+
+      beforeSpacerFiltered = beforeSpacer.filter((sideBarDiv) => !(pannelsToFilterByTitle.includes(sideBarDiv.title ? sideBarDiv.title : 'null')))
+      beforeSpacerFiltered = beforeSpacerFiltered.filter( (sideBarDiv) => !(sideBarDiv.title ? sideBarDiv.title.startsWith("Homekit Infused") : false)) //there is only one sidebar object without title (Overview), which we want to keep
+
+      return [beforeSpacerFiltered, afterSpacerFiltered]
+    }
+  }
 
   private _renderAllPanels() {
-    const [beforeSpacer, afterSpacer] = computePanels(
+    const [beforeSpacerPreFilter, afterSpacerPreFilter] = computePanels(
       this.hass.panels,
       this.hass.defaultPanel,
       this._panelOrder,
       this._hiddenPanels
     );
 
+
+    const [beforeSpacer, afterSpacer] = this._racelandFilter(beforeSpacerPreFilter, afterSpacerPreFilter)
     // prettier-ignore
     return html`
       <paper-listbox
