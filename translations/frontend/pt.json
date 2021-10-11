@@ -2053,7 +2053,7 @@
                         }
                     }
                 },
-                "header": "Configurar o Home Assistant",
+                "header": "Configuração do Raceland HA",
                 "helpers": {
                     "caption": "Auxiliares",
                     "description": "Elementos que ajudam a construir automações",
@@ -2088,7 +2088,7 @@
                     "copy_github": "Para GitHub",
                     "copy_raw": "Texto simples",
                     "custom_uis": "IUs personalizados:",
-                    "description": "Versão, saúde do sistema e atalhos para documentação",
+                    "description": "Versão do sistema e atalhos para documentação",
                     "developed_by": "Desenvolvido por um punhado de pessoas incríveis.",
                     "documentation": "Documentação",
                     "frontend": "frontend-ui",
@@ -2181,7 +2181,7 @@
                     "configure": "Configurar",
                     "configured": "Configurado",
                     "confirm_new": "Deseja configurar a integração {integration}",
-                    "description": "Gerir integrações com serviços, dispositivos, ...",
+                    "description": "Gerir integrações com serviços, dispositivos, etc",
                     "details": "Detalhes da integração",
                     "disable": {
                         "disabled_integrations": "{number} desativado",
@@ -2214,7 +2214,7 @@
                     "rename_input_label": "Nome da entrada",
                     "search": "Procurar integrações"
                 },
-                "introduction": "Aqui é possível configurar os seus componentes e o Home Assistant. Nem tudo é possível de ser configurado a partir da Interface Gráfica, mas estamos a trabalhar para isso.",
+                "introduction": "Aqui é possível configurar os seus componentes do Raceland HA.",
                 "logs": {
                     "caption": "Logs",
                     "clear": "Limpar",
@@ -2444,7 +2444,7 @@
                     "confirm_delete": "Tens a certeza que queres eliminar esta pessoa?",
                     "confirm_delete2": "Todos os dispositivos pertencentes a esta pessoa não ficarão atribuidos a ninguém.",
                     "create_person": "Criar pessoa",
-                    "description": "Gerir as pessoas que o Home Assistant segue.",
+                    "description": "Gerir as pessoas que o Raceland HA segue.",
                     "detail": {
                         "admin": "Administrador",
                         "allow_login": "Permitir login",

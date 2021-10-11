@@ -1,24 +1,24 @@
 import {
-  mdiAccount,
-  mdiBadgeAccountHorizontal,
-  mdiDevices,
-  mdiHomeAssistant,
-  mdiInformation,
-  mdiLightningBolt,
-  mdiMapMarkerRadius,
-  mdiMathLog,
-  mdiNfcVariant,
-  mdiPalette,
-  mdiPaletteSwatch,
-  mdiPencil,
-  mdiPuzzle,
+  mdiAccountGroup,
+  mdiAccountMultiplePlus,
+  // mdiDevices,
+  // mdiHomeAssistant,
+  //mdiInformationVariant,
+  // mdiLightningBolt,
+  // mdiMapMarkerRadius,
+  // mdiMathLog,
+  // mdiNfcVariant,
+  // mdiPalette,
+  // mdiPaletteSwatch,
+  mdiProgressPencil,
+  //mdiPuzzleEdit,
   mdiRobot,
   mdiScriptText,
-  mdiServer,
-  mdiShape,
-  mdiSofa,
-  mdiTools,
-  mdiViewDashboard,
+  //mdiServerSecurity,
+  // mdiShape,
+  // mdiSofa,
+  // mdiTools,
+  //mdiViewDashboardVariant,
 } from "@mdi/js";
 import "@polymer/paper-item/paper-item";
 import "@polymer/paper-item/paper-item-body";
@@ -41,152 +41,181 @@ declare global {
 }
 
 export const configSections: { [name: string]: PageNavigation[] } = {
-  integrations: [
-    {
-      component: "integrations",
-      path: "/config/integrations",
-      translationKey: "ui.panel.config.integrations.caption",
-      iconPath: mdiPuzzle,
-      core: true,
-    },
-    {
-      component: "devices",
-      path: "/config/devices",
-      translationKey: "ui.panel.config.devices.caption",
-      iconPath: mdiDevices,
-      core: true,
-    },
-    {
-      component: "entities",
-      path: "/config/entities",
-      translationKey: "ui.panel.config.entities.caption",
-      iconPath: mdiShape,
-      core: true,
-    },
+  // integrations: [
+  //   {
+  //     component: "integrations",
+  //     path: "/config/integrations",
+  //     translationKey: "ui.panel.config.integrations.caption",
+  //     iconPath: mdiPuzzleEdit,
+  //     core: true,
+  //   },
+    // {
+    //   component: "devices",
+    //   path: "/config/devices",
+    //   translationKey: "ui.panel.config.devices.caption",
+    //   iconPath: mdiDevices,
+    //   core: true,
+    // },
+    // {
+    //   component: "entities",
+    //   path: "/config/entities",
+    //   translationKey: "ui.panel.config.entities.caption",
+    //   iconPath: mdiShape,
+    //   core: true,
+    // },
+    // {
+    //   component: "person",
+    //   path: "/config/person",
+    //   translationKey: "ui.panel.config.person.caption",
+    //   iconPath: mdiAccountGroup,
+    // },
+    // {
+    //   component: "users",
+    //   path: "/config/users",
+    //   translationKey: "ui.panel.config.users.caption",
+    //   iconPath: mdiAccountMultiplePlus,
+    //   core: true,
+    //   advancedOnly: true,
+    // },
+  //   {
+  //     component: "lovelace",
+  //     path: "/config/lovelace/dashboards",
+  //     translationKey: "ui.panel.config.lovelace.caption",
+  //     iconPath: mdiViewDashboardVariant,
+  //   },
+  //   {
+  //     component: "info",
+  //     path: "/config/info",
+  //     translationKey: "ui.panel.config.info.caption",
+  //     iconPath: mdiInformationVariant,
+  //     core: true,
+  //   },
 
-  ],
-  automation: [
-    {
-    component: "areas",
-    path: "/config/areas",
-    translationKey: "ui.panel.config.areas.caption",
-    iconPath: mdiSofa,
-    core: true,
-  },
-    /*{
-      component: "blueprint",
-      path: "/config/blueprint",
-      translationKey: "ui.panel.config.blueprint.caption",
-      iconPath: mdiPaletteSwatch,
-    },*/
-    {
-      component: "automation",
-      path: "/config/automation",
-      translationKey: "ui.panel.config.automation.caption",
-      iconPath: mdiRobot,
-    },/*
-    {
-      component: "scene",
-      path: "/config/scene",
-      translationKey: "ui.panel.config.scene.caption",
-      iconPath: mdiPalette,
-    },*/
-    {
-      component: "script",
-      path: "/config/script",
-      translationKey: "ui.panel.config.script.caption",
-      iconPath: mdiScriptText,
-    },
-  ],
-  helpers: [
-    {
-      component: "helpers",
-      path: "/config/helpers",
-      translationKey: "ui.panel.config.helpers.caption",
-      iconPath: mdiTools,
-      core: true,
-    },
-  ],
-  experiences: [
-    {
-      component: "tag",
-      path: "/config/tags",
-      translationKey: "ui.panel.config.tag.caption",
-      iconPath: mdiNfcVariant,
-    },
-    {
-      component: "energy",
-      path: "/config/energy",
-      translationKey: "ui.panel.config.energy.caption",
-      iconPath: mdiLightningBolt,
-    },
-  ],
-  lovelace: [
-    {
-      component: "lovelace",
-      path: "/config/lovelace/dashboards",
-      translationKey: "ui.panel.config.lovelace.caption",
-      iconPath: mdiViewDashboard,
-    },
-  ],
+  // ],
+  // helpers: [
+  //   // {
+  //   //   component: "helpers",
+  //   //   path: "/config/helpers",
+  //   //   translationKey: "ui.panel.config.helpers.caption",
+  //   //   iconPath: mdiTools,
+  //   //   core: true,
+  //   // },
+  // ],
+  // experiences: [
+  //   // {
+  //   //   component: "tag",
+  //   //   path: "/config/tags",
+  //   //   translationKey: "ui.panel.config.tag.caption",
+  //   //   iconPath: mdiNfcVariant,
+  //   // },
+  //   // {
+  //   //   component: "energy",
+  //   //   path: "/config/energy",
+  //   //   translationKey: "ui.panel.config.energy.caption",
+  //   //   iconPath: mdiLightningBolt,
+  //   // },
+  // ],
+  // lovelace: [
+  //   {
+  //     component: "lovelace",
+  //     path: "/config/lovelace/dashboards",
+  //     translationKey: "ui.panel.config.lovelace.caption",
+  //     iconPath: mdiViewDashboard,
+  //   },
+  // ],
   persons: [
     {
       component: "person",
       path: "/config/person",
       translationKey: "ui.panel.config.person.caption",
-      iconPath: mdiAccount,
+      iconPath: mdiAccountGroup,
     },
-    {
-      component: "zone",
-      path: "/config/zone",
-      translationKey: "ui.panel.config.zone.caption",
-      iconPath: mdiMapMarkerRadius,
-    },
+
     {
       component: "users",
       path: "/config/users",
       translationKey: "ui.panel.config.users.caption",
-      iconPath: mdiBadgeAccountHorizontal,
+      iconPath: mdiAccountMultiplePlus,
       core: true,
       advancedOnly: true,
     },
+    // {
+    //   component: "server_control",
+    //   path: "/config/server_control",
+    //   translationKey: "ui.panel.config.server_control.caption",
+    //   iconPath: mdiServerSecurity,
+    //   core: true,
+    // },
   ],
+  automation: [
+    //   {
+    //   component: "areas",
+    //   path: "/config/areas",
+    //   translationKey: "ui.panel.config.areas.caption",
+    //   iconPath: mdiSofa,
+    //   core: true,
+    // },
+      /*{
+        component: "blueprint",
+        path: "/config/blueprint",
+        translationKey: "ui.panel.config.blueprint.caption",
+        iconPath: mdiPaletteSwatch,
+      },*/
+      {
+        component: "automation",
+        path: "/config/automation",
+        translationKey: "ui.panel.config.automation.caption",
+        iconPath: mdiRobot,
+      },
+      // {
+      //   component: "scene",
+      //   path: "/config/scene",
+      //   translationKey: "ui.panel.config.scene.caption",
+      //   iconPath: mdiPalette,
+      // },
+      {
+        component: "script",
+        path: "/config/script",
+        translationKey: "ui.panel.config.script.caption",
+        iconPath: mdiScriptText,
+      },
+    ],
   general: [
-    {
-      component: "core",
-      path: "/config/core",
-      translationKey: "ui.panel.config.core.caption",
-      iconPath: mdiHomeAssistant,
-      core: true,
-    },
-    {
-      component: "server_control",
-      path: "/config/server_control",
-      translationKey: "ui.panel.config.server_control.caption",
-      iconPath: mdiServer,
-      core: true,
-    },
-    {
-      component: "logs",
-      path: "/config/logs",
-      translationKey: "ui.panel.config.logs.caption",
-      iconPath: mdiMathLog,
-      core: true,
-    },
-    {
-      component: "info",
-      path: "/config/info",
-      translationKey: "ui.panel.config.info.caption",
-      iconPath: mdiInformation,
-      core: true,
-    },
+  //   // {
+  //   //   component: "core",
+  //   //   path: "/config/core",
+  //   //   translationKey: "ui.panel.config.core.caption",
+  //   //   iconPath: mdiHomeAssistant,
+  //   //   core: true,
+  //   // },
+    // {
+    //   component: "server_control",
+    //   path: "/config/server_control",
+    //   translationKey: "ui.panel.config.server_control.caption",
+    //   iconPath: mdiServerSecurity,
+    //   core: true,
+    // },
+  //   // {
+  //   //   component: "logs",
+  //   //   path: "/config/logs",
+  //   //   translationKey: "ui.panel.config.logs.caption",
+  //   //   iconPath: mdiMathLog,
+  //   //   core: true,
+  //   // },
+  //   // {
+  //   //   component: "info",
+  //   //   path: "/config/info",
+  //   //   translationKey: "ui.panel.config.info.caption",
+  //   //   iconPath: mdiInformation,
+  //   //   core: true,
+  //   // },
   ],
   advanced: [
     {
       component: "customize",
       path: "/config/customize",
       translationKey: "ui.panel.config.customize.caption",
-      iconPath: mdiPencil,
+      iconPath: mdiProgressPencil,
       core: true,
       advancedOnly: true,
     },

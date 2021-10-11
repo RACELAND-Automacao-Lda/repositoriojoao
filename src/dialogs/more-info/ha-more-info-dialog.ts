@@ -157,7 +157,7 @@ export class MoreInfoDialog extends LitElement {
                   .activeIndex=${this._currTabIndex}
                   @MDCTabBar:activated=${this._handleTabChanged}
                 >
-                 <!-- <mwc-tab
+                 <mwc-tab
                     .label=${this.hass.localize(
                       "ui.dialogs.more_info_control.details"
                     )}
@@ -166,7 +166,7 @@ export class MoreInfoDialog extends LitElement {
                     .label=${this.hass.localize(
                       "ui.dialogs.more_info_control.history"
                     )}
-                  ></mwc-tab> -->
+                  ></mwc-tab>
                 </mwc-tab-bar>
               `
             : ""}

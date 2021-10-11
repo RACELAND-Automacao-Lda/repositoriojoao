@@ -1662,7 +1662,7 @@
                     "rename_input_label": "Nome da entrada",
                     "search": "Procurar integrações"
                 },
-                "introduction": "Aqui é possível configurar seus componentes e Home Assistant. Nem tudo é possível configurar via UI, mas estamos trabalhando nisso.",
+
                 "logs": {
                     "caption": "Logs",
                     "clear": "Limpar",

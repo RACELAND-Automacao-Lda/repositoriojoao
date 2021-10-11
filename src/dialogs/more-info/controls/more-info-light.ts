@@ -91,7 +91,7 @@ class MoreInfoLight extends LitElement {
           action: "call-service",
           service: "light.turn_on",
           service_data: { entity_id: entity, brightness: 65 },
-          color: "#F0F0F0",
+          color: "#D1CFCF",
         },
         {
           action: "call-service",
@@ -103,7 +103,7 @@ class MoreInfoLight extends LitElement {
           action: "call-service",
           service: "light.turn_on",
           service_data: { entity_id: entity, brightness: 220 },
-          color: "#D1CFCF",
+          color: "#F0F0F0",
         },
       ];
     }
