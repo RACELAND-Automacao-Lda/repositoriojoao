@@ -2,8 +2,8 @@ import "@polymer/paper-styles/paper-styles";
 import "@polymer/polymer/lib/elements/custom-style";
 import { derivedStyles } from "./styles";
 
-export const DEFAULT_PRIMARY_COLOR = "#03a9f4";
-export const DEFAULT_ACCENT_COLOR = "#ff9800";
+export const DEFAULT_PRIMARY_COLOR = "#DF1701";
+export const DEFAULT_ACCENT_COLOR = "#000000";
 
 const documentContainer = document.createElement("template");
 documentContainer.setAttribute("style", "display: none;");
@@ -59,7 +59,7 @@ documentContainer.innerHTML = `<custom-style>
 
       /* states */
       --state-icon-color: #44739e;
-      /* an active state is anything that would require attention */ 
+      /* an active state is anything that would require attention */
       --state-icon-active-color: #FDD835;
       /* an error state is anything that would be considered an error */
       /* --state-icon-error-color: #db4437; derived from error-color */

@@ -69,7 +69,7 @@ export class HaPickThemeRow extends LitElement {
         >
           <paper-listbox
             slot="dropdown-content"
-            .selected=${this.hass.selectedTheme?.theme || "dark_red"}
+            .selected=${this.hass.selectedTheme?.theme || "Claro"}
             attr-for-selected="theme"
             @iron-select=${this._handleThemeSelection}
           >
@@ -159,7 +159,7 @@ export class HaPickThemeRow extends LitElement {
       (!oldHass || oldHass.themes.themes !== this.hass.themes.themes);
 
     if (themesChanged) {
-      this._themeNames = ["dark_red"].concat(
+      this._themeNames = ["Claro"].concat(
         Object.keys(this.hass.themes.themes).sort()
       );
     }
@@ -196,7 +196,7 @@ export class HaPickThemeRow extends LitElement {
 
   private _handleThemeSelection(ev: CustomEvent) {
     const theme = ev.detail.item.theme;
-    if (theme === "dark_red") {
+    if (theme === "Claro") {
       if (this.hass.selectedTheme?.theme) {
         fireEvent(this, "settheme", {
           theme: "",
