@@ -134,14 +134,14 @@ class HaPanelProfile extends LitElement {
                   ></ha-force-narrow-row>
                 `
               : ""}
-            ${"vibrate" in navigator
+            <!-- ${"vibrate" in navigator
               ? html`
                   <ha-set-vibrate-row
                     .narrow=${this.narrow}
                     .hass=${this.hass}
                   ></ha-set-vibrate-row>
                 `
-              : ""}
+              : ""} -->
             ${!isExternal
               ? html`
                   <ha-push-notifications-row

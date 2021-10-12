@@ -60,7 +60,7 @@ export class HuiViewEditor extends LitElement {
     if (!this._config) {
       return "";
     }
-    return this._config.theme || "Claro";
+    return this._config.theme || "Raceland";
   }
 
   get _type(): string {

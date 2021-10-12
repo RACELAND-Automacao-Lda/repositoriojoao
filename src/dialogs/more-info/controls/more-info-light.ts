@@ -51,7 +51,7 @@ class MoreInfoLight extends LitElement {
 
     // variaveis relativas aos icons e as acçoes no home assistant
     var entity = this.stateObj?.entity_id;
-    var actionsInARow = 5;
+    var actionsInARow = 3;
     var icon = this.stateObj?.attributes.icon;
     var borderRadius = "40px";
     var onStates = ["on"];
@@ -85,6 +85,12 @@ class MoreInfoLight extends LitElement {
           service: "light.turn_on",
           service_data: { entity_id: entity, rgb_color: [247, 217, 89] },
           color: "#f7d959",
+        },
+        {
+          action: "call-service",
+          service: "light.turn_on",
+          service_data: { entity_id: entity, rgb_color: [136, 119, 119] },
+          color: "#887777",
         },
         {
           action: "call-service",
@@ -178,7 +184,7 @@ class MoreInfoLight extends LitElement {
                     style="${onStates.includes(this.stateObj.state)
                       ? "color:" + color + ";"
                       : ""}"
-                    icon="${icon}"
+                    icon="${"mdi:lightbulb"}"
                   />
                 </div>
               `}

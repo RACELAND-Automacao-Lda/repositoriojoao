@@ -163,17 +163,25 @@ export class HuiCardPicker extends LitElement {
         `ui.panel.lovelace.editor.card.${card.type}.description`
       ),
       ...card,
-    }));
+    })).reverse();
     if (customCards.length > 0) {
-      cards = cards.concat(
-        customCards.map((ccard: CustomCardEntry) => ({
-          type: ccard.type,
-          name: ccard.name,
-          description: ccard.description,
-          showElement: ccard.preview,
-          isCustom: true,
-        }))
-      );
+      const customCardToRemove = ["Browser Player","More-info card"]; // add the rest
+      cards = cards
+        .concat(
+          customCards
+            .filter(
+              (ccard: CustomCardEntry) =>
+                !customCardToRemove.includes(ccard.name ? ccard.name : "")
+            )
+            .map((ccard: CustomCardEntry) => ({
+              type: ccard.type,
+              name: ccard.name,
+              description: ccard.description,
+              showElement: ccard.preview,
+              isCustom: true,
+            }))
+        )
+        .reverse();
     }
     this._cards = cards.map((card: Card) => ({
       card: card,
@@ -277,9 +285,7 @@ export class HuiCardPicker extends LitElement {
         ></div>
         <div class="card-header">
           ${customCard
-            ? `${this.hass!.localize(
-                "ui.panel.lovelace.editor.cardpicker.custom_card"
-              )}: ${customCard.name || customCard.type}`
+            ? `${customCard.name || customCard.type}`
             : name}
         </div>
         <div
