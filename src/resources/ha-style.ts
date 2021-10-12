@@ -2,7 +2,7 @@ import "@polymer/paper-styles/paper-styles";
 import "@polymer/polymer/lib/elements/custom-style";
 import { derivedStyles } from "./styles";
 
-export const DEFAULT_PRIMARY_COLOR = "#DF1701";
+export const DEFAULT_PRIMARY_COLOR = "#b01616";
 export const DEFAULT_ACCENT_COLOR = "#000000";
 
 const documentContainer = document.createElement("template");
