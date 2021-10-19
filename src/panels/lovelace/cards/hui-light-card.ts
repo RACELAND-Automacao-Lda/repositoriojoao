@@ -271,7 +271,7 @@ export class HuiLightCard extends LitElement implements LovelaceCard {
         text-align: center;
         --name-font-size: 1.2rem;
         --brightness-font-size: 1.2rem;
-        border-radius: 12px;
+        border-radius: 28px;
       }
 
       .more-info {
@@ -299,8 +299,8 @@ export class HuiLightCard extends LitElement implements LovelaceCard {
       }
 
       #slider {
-        height: 100%;
-        width: 100%;
+        height: 77%;
+        width: 77%;
         position: relative;
         max-width: 200px;
         min-width: 100px;
@@ -314,7 +314,7 @@ export class HuiLightCard extends LitElement implements LovelaceCard {
 
       .light-button {
         color: var(--paper-item-icon-color, #44739e);
-        width: 60%;
+        width: 40%;
         height: auto;
         position: absolute;
         max-width: calc(100% - 40px);

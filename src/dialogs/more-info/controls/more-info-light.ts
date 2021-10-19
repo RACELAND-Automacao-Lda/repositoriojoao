@@ -65,14 +65,14 @@ class MoreInfoLight extends LitElement {
         {
           action: "call-service",
           service: "light.turn_on",
-          service_data: { entity_id: entity, rgb_color: [255, 0, 0] },
-          color: "#ff0000",
+          service_data: { entity_id: entity, rgb_color: [240, 85, 68] },
+          color: "#f05544",
         },
         {
           action: "call-service",
           service: "light.turn_on",
-          service_data: { entity_id: entity, rgb_color: [40, 255, 0] },
-          color: "#28ff00",
+          service_data: { entity_id: entity, rgb_color: [125, 219, 84] },
+          color: "#7DDB54",
         },
         {
           action: "call-service",
@@ -95,8 +95,8 @@ class MoreInfoLight extends LitElement {
         {
           action: "call-service",
           service: "light.turn_on",
-          service_data: { entity_id: entity, rgb_color: [136, 119, 119] },
-          color: "#887777",
+          service_data: { entity_id: entity, rgb_color: [255, 181, 245] },
+          color: "#FFB5F5",
         },
       ];
     }
