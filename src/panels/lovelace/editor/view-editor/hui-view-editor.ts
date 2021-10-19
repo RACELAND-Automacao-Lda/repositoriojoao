@@ -138,7 +138,7 @@ export class HuiViewEditor extends LitElement {
                   `ui.panel.lovelace.editor.edit_view.types.${type}`
                 )}
               </paper-item>`
-            )}
+    )}
           </paper-listbox>
         </paper-dropdown-menu> -->
       </div>
@@ -174,7 +174,7 @@ export class HuiViewEditor extends LitElement {
       ...this._config,
     };
     delete newConfig.panel;
-    if (selected === "masonry") {
+    if (selected === "custom:horizontal-layout") {
       delete newConfig.type;
     } else {
       newConfig.type = selected;

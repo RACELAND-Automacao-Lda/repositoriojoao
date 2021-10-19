@@ -211,6 +211,7 @@ export class HuiEntityCard extends LitElement implements LovelaceCard {
           justify-content: space-between;
           cursor: pointer;
           outline: none;
+          border-radius: 25px;
         }
 
         .header {

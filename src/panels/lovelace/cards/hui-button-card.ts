@@ -267,6 +267,7 @@ export class HuiButtonCard extends LitElement implements LovelaceCard {
           justify-content: center;
           position: relative;
           border-radius: 25px;
+          background: rgba(120,120,120,0.7);
         }
 
         ha-card:focus {
@@ -274,7 +275,7 @@ export class HuiButtonCard extends LitElement implements LovelaceCard {
         }
 
         ha-icon {
-          width: 67%;
+          width: 64%;
           height: auto;
           color: var(--paper-item-icon-color, #44739e);
           --mdc-icon-size: 100%;
