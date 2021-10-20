@@ -438,7 +438,8 @@ class HaSidebar extends LitElement {
       }
     }
 
-    return html` <div
+    return html`
+    <!-- <div
       class="notifications-container"
       @mouseenter=${this._itemMouseEnter}
       @mouseleave=${this._itemMouseLeave}
@@ -463,7 +464,8 @@ class HaSidebar extends LitElement {
           ? html` <span class="notification-badge">${notificationCount}</span> `
           : ""}
       </paper-icon-item>
-    </div>`;
+    </div> -->
+    `;
   }
 
   private _renderUserItem() {

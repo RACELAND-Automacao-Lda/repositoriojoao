@@ -119,7 +119,7 @@ export class HaPickThemeRow extends LitElement {
               >
               </ha-radio>
             </ha-formfield>
-            ${curTheme === "default"
+            <!-- ${curTheme === "default"
               ? html` <div class="color-pickers">
                   <paper-input
                     .value=${themeSettings?.primaryColor ||
@@ -146,7 +146,7 @@ export class HaPickThemeRow extends LitElement {
                       </mwc-button>`
                     : ""}
                 </div>`
-              : ""}
+              : ""} -->
           </div>`
         : ""}
     `;
