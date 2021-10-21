@@ -10,7 +10,7 @@ class HaInitPage extends LitElement {
   protected render() {
     return html`
       <div>
-        <img src="/static/icons/favicon-192x192.png" height="192" />
+        <img src="/static/icons/logo_raceland.png" height="192" />
         ${this.error
           ? html`
               <p>Unable to connect to Home Assistant.</p>
