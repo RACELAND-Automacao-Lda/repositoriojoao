@@ -18,7 +18,7 @@ export class HaSettingsRow extends LitElement {
           ?three-line=${this.threeLine}
         >
           <slot name="heading"></slot>
-          <div secondary><slot name="description"></slot></div>
+
         </paper-item-body>
       </div>
       <slot></slot>
