@@ -2,7 +2,7 @@ import "@polymer/paper-styles/paper-styles";
 import "@polymer/polymer/lib/elements/custom-style";
 import { derivedStyles } from "./styles";
 
-export const DEFAULT_PRIMARY_COLOR = "#b01616";
+export const DEFAULT_PRIMARY_COLOR = "#828386"; //lower-header and sidebar text colors
 export const DEFAULT_ACCENT_COLOR = "#000000";
 
 const documentContainer = document.createElement("template");
@@ -10,14 +10,8 @@ documentContainer.setAttribute("style", "display: none;");
 
 documentContainer.innerHTML = `<custom-style>
   <style>
-    /*
-      Home Assistant default styles.
-
-      In Polymer 2.0, default styles should to be set on the html selector.
-      (Setting all default styles only on body breaks shadyCSS polyfill.)
-      See: https://github.com/home-assistant/home-assistant-polymer/pull/901
-    */
     html {
+
       font-size: 14px;
       height: 100vh;
 
@@ -31,11 +25,11 @@ documentContainer.innerHTML = `<custom-style>
       /* main interface colors */
       --primary-color: ${DEFAULT_PRIMARY_COLOR};
       --dark-primary-color: #0288d1;
-      --light-primary-color: #b01616;
+      --light-primary-color: #ed1c24;
       --accent-color: ${DEFAULT_ACCENT_COLOR};
       --divider-color: rgba(0, 0, 0, .12);
 
-      --scrollbar-thumb-color: rgb(194, 194, 194);
+      --scrollbar-thumb-color: rgb(237, 28, 36);
 
       --error-color: #db4437;
       --warning-color: #ffa600;
@@ -45,7 +39,7 @@ documentContainer.innerHTML = `<custom-style>
       /* backgrounds */
       --card-background-color: #ffffff;
       --primary-background-color: #fafafa;
-      --secondary-background-color: #e5e5e5; /* behind the cards on state */
+      --secondary-background-color: #fafafa; /* behind the cards on state */
 
       /* for header */
       --header-height: 56px;
@@ -58,17 +52,14 @@ documentContainer.innerHTML = `<custom-style>
       --label-badge-grey: #9e9e9e;
 
       /* states */
-      --state-icon-color: #44739e;
-      /* an active state is anything that would require attention */
+      --state-icon-color: #ed1c24;
       --state-icon-active-color: #FDD835;
-      /* an error state is anything that would be considered an error */
-      /* --state-icon-error-color: #db4437; derived from error-color */
-
+      --state-icon-error-color: #828386;
+      --state-unavailable-color: #828386;
       --state-on-color: #66a61e;
       --state-off-color: #ff0029;
       --state-home-color: #66a61e;
       --state-not_home-color: #ff0029;
-      /* --state-unavailable-color: #a0a0a0; derived from disabled-text-color */
       --state-unknown-color: #606060;
       --state-idle-color: #7990a3;
 
@@ -123,12 +114,6 @@ documentContainer.innerHTML = `<custom-style>
         .join("")}
     }
 
-    /*
-      prevent clipping of positioned elements in a small scrollable
-      force smooth scrolling if can scroll
-      use non-shady selectors so this only targets iOS 9
-      conditional mixin set in ha-style-dialog does not work with shadyCSS
-    */
     paper-dialog-scrollable:not(.can-scroll) > .scrollable {
       -webkit-overflow-scrolling: auto !important;
     }

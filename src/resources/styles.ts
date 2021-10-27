@@ -1,14 +1,14 @@
 import { css } from "lit";
 
 export const darkStyles = {
-  "primary-background-color": "#B01616", //background color
+  "primary-background-color": "#828386", //background color
   "card-background-color": "#1c1c1c",
   "secondary-background-color": "#202020",
   "primary-text-color": "#e1e1e1",
   "secondary-text-color": "#9b9b9b",
   "disabled-text-color": "#6f6f6f",
-  "app-header-text-color": "#e1e1e1",
-  "app-header-background-color": "#96444c",
+  "app-header-text-color": "#ffffff",
+  "app-header-background-color": "#el1c24",
   "switch-unchecked-button-color": "#999999",
   "switch-unchecked-track-color": "#9b9b9b",
   "divider-color": "rgba(225, 225, 225, .12)",

@@ -881,7 +881,7 @@ class HaSidebar extends LitElement {
           width: 48px;
         }
         :host([expanded]) paper-icon-item {
-          width: 248px;
+          width: 240px;
         }
         :host([rtl]) paper-icon-item {
           padding-left: auto;
@@ -895,7 +895,10 @@ class HaSidebar extends LitElement {
 
         .iron-selected paper-icon-item::before,
         a:not(.iron-selected):focus::before {
-          border-radius: 4px;
+          border-radius: var(--varradi);
+          border-style: var(--varborder);
+          border-color: var(--sidebar-color-border);
+          transform: var(--skew-iron-selected);
           position: absolute;
           top: 0;
           right: 2px;
@@ -904,20 +907,23 @@ class HaSidebar extends LitElement {
           pointer-events: none;
           content: "";
           transition: opacity 15ms linear;
-          will-change: opacity;
+          will-change: var(--sidebar-color-border);
         }
+
         .iron-selected paper-icon-item::before {
-          background-color: var(--sidebar-selected-icon-color);
-          opacity: 0.12;
+          background-color: var(--sidebar-selected-background-color);
+          opacity: var(--sidebar-color-border, 0.5);
         }
+
         a:not(.iron-selected):focus::before {
           background-color: currentColor;
-          opacity: var(--dark-divider-opacity);
+          opacity: var(--dark-divider-opacity, 0.2);
           margin: 4px 8px;
         }
+
         .iron-selected paper-icon-item:focus::before,
         .iron-selected:focus paper-icon-item::before {
-          opacity: 0.2;
+          opacity: var(--iron-selected-opacity, 0.2);
         }
 
         .iron-selected paper-icon-item[pressed]:before {
@@ -997,7 +1003,7 @@ class HaSidebar extends LitElement {
           box-sizing: border-box;
           border-radius: 50%;
           font-weight: 400;
-          background-color: var(--accent-color);
+          background-color: rgb(255, 152, 0);
           line-height: 20px;
           text-align: center;
           padding: 0px 6px;
