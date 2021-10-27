@@ -140,6 +140,7 @@ export class HuiCardOptions extends LitElement {
         border-top-left-radius: 0;
         border-radius: 12px;
         width: 100%;
+
       }
 
       .card-actions {

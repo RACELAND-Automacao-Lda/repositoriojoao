@@ -85,13 +85,13 @@ documentContainer.innerHTML = `<custom-style>
 
       /* opacity for dark text on a light background */
       --dark-divider-opacity: 0.12;
-      --dark-disabled-opacity: 0.38; /* or hint text or icon */
+      --dark-disabled-opacity: 0.38;
       --dark-secondary-opacity: 0.54;
       --dark-primary-opacity: 0.87;
 
       /* opacity for light text on a dark background */
       --light-divider-opacity: 0.12;
-      --light-disabled-opacity: 0.3; /* or hint text or icon */
+      --light-disabled-opacity: 0.3;
       --light-secondary-opacity: 0.7;
       --light-primary-opacity: 1.0;
 
