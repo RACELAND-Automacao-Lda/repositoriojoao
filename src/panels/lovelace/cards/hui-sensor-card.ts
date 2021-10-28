@@ -1,3 +1,4 @@
+// import { css, CSSResultGroup } from "lit";
 import { HassEntity } from "home-assistant-js-websocket/dist/types";
 import { customElement } from "lit/decorators";
 import { computeDomain } from "../../../common/entity/compute_domain";
@@ -70,6 +71,15 @@ class HuiSensorCard extends HuiEntityCard {
   }
 }
 
+// static get styles(): CSSResultGroup {
+//   return css`
+//   ha-card {
+//     border-radius: 28px;
+//     background: rgba(53,53,56,0.7);
+
+//   }
+//   `;
+// }
 declare global {
   interface HTMLElementTagNameMap {
     "hui-sensor-card": HuiSensorCard;

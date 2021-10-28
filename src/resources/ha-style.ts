@@ -16,20 +16,20 @@ documentContainer.innerHTML = `<custom-style>
       height: 100vh;
 
       /* text */
-      --primary-text-color: #212121;
-      --secondary-text-color: #727272;
+      --primary-text-color: #000000;
+      --secondary-text-color: #828386;
       --text-primary-color: #ffffff;
       --text-light-primary-color: #212121;
       --disabled-text-color: #bdbdbd;
 
       /* main interface colors */
-      --primary-color: ${DEFAULT_PRIMARY_COLOR};
-      --dark-primary-color: #0288d1;
-      --light-primary-color: #ed1c24;
+      --primary-color: ${DEFAULT_PRIMARY_COLOR}; /* relativo ao selected tab color */
+      --dark-primary-color: #828386;
+      --light-primary-color: #ffffff;
       --accent-color: ${DEFAULT_ACCENT_COLOR};
       --divider-color: rgba(0, 0, 0, .12);
 
-      --scrollbar-thumb-color: rgb(237, 28, 36);
+      --scrollbar-thumb-color: rgb(130, 131, 134);
 
       --error-color: #db4437;
       --warning-color: #ffa600;
@@ -37,9 +37,9 @@ documentContainer.innerHTML = `<custom-style>
       --info-color: #039be5;
 
       /* backgrounds */
-      --card-background-color: #ffffff;
-      --primary-background-color: #fafafa;
-      --secondary-background-color: #fafafa; /* behind the cards on state */
+      --card-background-color: #aaabad; /* grey background for everything */
+      --primary-background-color: #ffffff;
+      --secondary-background-color: #828386; /* behind the cards on state */
 
       /* for header */
       --header-height: 56px;
@@ -52,10 +52,10 @@ documentContainer.innerHTML = `<custom-style>
       --label-badge-grey: #9e9e9e;
 
       /* states */
-      --state-icon-color: #ed1c24;
+      --state-icon-color: #ffffff;
       --state-icon-active-color: #FDD835;
-      --state-icon-error-color: #828386;
-      --state-unavailable-color: #828386;
+      --state-icon-error-color: #9ba1b3;
+      --state-unavailable-color: #9ba1b3;
       --state-on-color: #66a61e;
       --state-off-color: #ff0029;
       --state-home-color: #66a61e;
@@ -101,7 +101,7 @@ documentContainer.innerHTML = `<custom-style>
       --rgb-primary-text-color: 33, 33, 33;
       --rgb-secondary-text-color: 114, 114, 114;
       --rgb-text-primary-color: 255, 255, 255;
-      --rgb-card-background-color: 255, 255, 255;
+      --rgb-card-background-color: 130, 131, 134;
 
       /* Vaadin typography */
       --material-h6-font-size: 1.25rem;
