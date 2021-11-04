@@ -109,7 +109,7 @@ export class HuiLightCard extends LitElement implements LovelaceCard {
           @click=${this._handleMoreInfo}
           tabindex="0"
         >
-          <!-- <ha-svg-icon .path=${mdiDotsVertical}></ha-svg-icon> -->
+        <ha-svg-icon .path=${mdiDotsVertical}></ha-svg-icon>
         </mwc-icon-button>
 
         <!-- <div class="slidecontainer">
@@ -275,7 +275,7 @@ export class HuiLightCard extends LitElement implements LovelaceCard {
         --name-font-size: 1.2rem;
         --brightness-font-size: 1.2rem;
         border-radius: 25px;
-        background: rgba(48, 48, 51, 0.7);
+        background: rgba(53,53,56,0.7);
       }
       .more-info {
         position: absolute;
