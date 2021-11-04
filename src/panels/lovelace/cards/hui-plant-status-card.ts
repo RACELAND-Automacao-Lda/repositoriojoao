@@ -159,6 +159,7 @@ class HuiPlantStatusCard extends LitElement implements LovelaceCard {
       ha-card {
         height: 100%;
         box-sizing: border-box;
+        background: rgba(48, 48, 51, 0.7);
       }
       .banner {
         display: flex;

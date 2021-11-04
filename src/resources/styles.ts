@@ -2,7 +2,7 @@ import { css } from "lit";
 
 export const darkStyles = {
   "primary-background-color": "#828386", //background color
-  "card-background-color": "#1c1c1c",
+  "card-background-color": "rgba(37, 37, 39, 0.7)", //adiconado isto
   "secondary-background-color": "#202020",
   "primary-text-color": "#e1e1e1",
   "secondary-text-color": "#9b9b9b",
@@ -299,8 +299,8 @@ export const haStyleDialog = css`
       left: env(safe-area-inset-left);
       right: env(safe-area-inset-right);
       overflow: scroll;
-      border-bottom-left-radius: 0px;
-      border-bottom-right-radius: 0px;
+      border-bottom-left-radius: 25px;
+      border-bottom-right-radius: 25px;
     }
   }
 
@@ -352,8 +352,8 @@ export const haStyleScrollbar = css`
   }
 
   .ha-scrollbar::-webkit-scrollbar-thumb {
-    -webkit-border-radius: 4px;
-    border-radius: 4px;
+    -webkit-border-radius: 25px;
+    border-radius: 25px;
     background: var(--scrollbar-thumb-color);
   }
 

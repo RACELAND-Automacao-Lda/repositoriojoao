@@ -575,6 +575,7 @@ export class HuiMediaControlCard extends LitElement implements LovelaceCard {
       ha-card {
         overflow: hidden;
         height: 100%;
+        background: rgba(48, 48, 51, 0.7);
       }
 
       .background {

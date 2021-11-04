@@ -28,6 +28,13 @@ import "../components/hui-warning";
 import type { LovelaceCard, LovelaceCardEditor } from "../types";
 import type { CalendarCardConfig } from "./types";
 
+// (window as any).customCards = (window as any).customCards || [];
+// (window as any).customCards.push({
+//   type: 'hui-calendar-card',
+//   name: 'Calendário',
+//   preview: true,
+// });
+
 @customElement("hui-calendar-card")
 export class HuiCalendarCard extends LitElement implements LovelaceCard {
   public static async getConfigElement(): Promise<LovelaceCardEditor> {
@@ -41,7 +48,8 @@ export class HuiCalendarCard extends LitElement implements LovelaceCard {
     entitiesFill: string[]
   ) {
     const includeDomains = ["calendar"];
-    const maxEntities = 2;
+    // const maxEntities = 2;
+    const maxEntities = 1;
     const foundEntities = findEntities(
       hass,
       maxEntities,
@@ -50,9 +58,10 @@ export class HuiCalendarCard extends LitElement implements LovelaceCard {
       includeDomains
     );
 
-    return {
-      entities: foundEntities,
-    };
+    // return {
+    //   entities: foundEntities,
+    // };
+    return { type: "calendar", entity: foundEntities[0] || "" };
   }
 
   @property({ attribute: false }) public hass?: HomeAssistant;

@@ -180,6 +180,7 @@ export class HuiStatisticsGraphCard extends LitElement implements LovelaceCard {
     return css`
       ha-card {
         height: 100%;
+        background: rgba(48, 48, 51, 0.7);
       }
       .content {
         padding: 16px;

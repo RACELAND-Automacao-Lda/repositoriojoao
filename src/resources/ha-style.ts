@@ -101,7 +101,7 @@ documentContainer.innerHTML = `<custom-style>
       --rgb-primary-text-color: 33, 33, 33;
       --rgb-secondary-text-color: 114, 114, 114;
       --rgb-text-primary-color: 255, 255, 255;
-      --rgb-card-background-color: 130, 131, 134;
+      --rgb-card-background-color: 48, 48, 51;
 
       /* Vaadin typography */
       --material-h6-font-size: 1.25rem;

@@ -447,6 +447,7 @@ export class HuiThermostatCard extends LitElement implements LovelaceCard {
         --name-font-size: 1.2rem;
         --brightness-font-size: 1.2rem;
         --rail-border-color: transparent;
+        background: rgba(48, 48, 51, 0.7);
       }
       .auto,
       .heat_cool {

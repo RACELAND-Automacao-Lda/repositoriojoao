@@ -268,7 +268,7 @@ class HuiAlarmPanelCard extends LitElement implements LovelaceCard {
         --alarm-color-pending: var(--label-badge-yellow);
         --alarm-color-triggered: var(--label-badge-red);
         --alarm-color-armed: var(--label-badge-red);
-        --alarm-color-autoarm: rgba(0, 153, 255, 0.1);
+        --alarm-color-autoarm: rgba(0, 153, 255, 0.7);
         --alarm-state-color: var(--alarm-color-armed);
         border-radius: 12px;
       }

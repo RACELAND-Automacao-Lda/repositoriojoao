@@ -109,8 +109,11 @@ export class HuiLightCard extends LitElement implements LovelaceCard {
           @click=${this._handleMoreInfo}
           tabindex="0"
         >
-          <ha-svg-icon .path=${mdiDotsVertical}></ha-svg-icon>
+          <!-- <ha-svg-icon .path=${mdiDotsVertical}></ha-svg-icon> -->
         </mwc-icon-button>
+
+        <!-- <div class="slidecontainer">
+        <input type="range" min="1" max="100" value="50"> -->
 
         <div class="content">
           <div id="controls">
@@ -265,17 +268,15 @@ export class HuiLightCard extends LitElement implements LovelaceCard {
     return css`
       ha-card {
         height: 100%;
-        width: 100%;
         box-sizing: border-box;
         position: relative;
         overflow: hidden;
         text-align: center;
         --name-font-size: 1.2rem;
         --brightness-font-size: 1.2rem;
-        border-radius: 28px;
-        background: rgba(53,53,56,0.7);
+        border-radius: 25px;
+        background: rgba(48, 48, 51, 0.7);
       }
-
       .more-info {
         position: absolute;
         cursor: pointer;
@@ -284,23 +285,19 @@ export class HuiLightCard extends LitElement implements LovelaceCard {
         border-radius: 100%;
         color: var(--secondary-text-color);
         z-index: 1;
-        padding: 0px 0px 50px 0px;
       }
-
       .content {
         height: 100%;
         display: flex;
         flex-direction: column;
         justify-content: center;
       }
-
       #controls {
         display: flex;
         justify-content: center;
         padding: 16px;
         position: relative;
       }
-
       #slider {
         height: 100%;
         width: 100%;
@@ -308,16 +305,14 @@ export class HuiLightCard extends LitElement implements LovelaceCard {
         max-width: 200px;
         min-width: 100px;
       }
-
       round-slider {
         --round-slider-path-color: var(--slider-track-color);
         --round-slider-bar-color: var(--primary-color);
         padding-bottom: 10%;
       }
-
       .light-button {
         color: var(--paper-item-icon-color, #44739e);
-        width: 100%;
+        width: 60%;
         height: auto;
         position: absolute;
         max-width: calc(100% - 40px);
@@ -329,22 +324,18 @@ export class HuiLightCard extends LitElement implements LovelaceCard {
         --mdc-icon-button-size: 100%;
         --mdc-icon-size: 100%;
       }
-
       .light-button.state-on {
         color: var(--paper-item-icon-active-color, #fdd835);
       }
-
       .light-button.state-unavailable {
         color: var(--state-icon-unavailable-color);
       }
-
       #info {
         text-align: center;
         margin-top: -56px;
-        padding: 25px;
+        padding: 16px;
         font-size: var(--name-font-size);
       }
-
       .brightness {
         font-size: var(--brightness-font-size);
         opacity: 0;
@@ -352,7 +343,6 @@ export class HuiLightCard extends LitElement implements LovelaceCard {
         -moz-transition: opacity 0.5s ease-in-out;
         -webkit-transition: opacity 0.5s ease-in-out;
       }
-
       .show_brightness {
         opacity: 1;
       }

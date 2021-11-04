@@ -352,6 +352,7 @@ class HuiShoppingListCard
         padding: 16px;
         height: 100%;
         box-sizing: border-box;
+        background: rgba(48, 48, 51, 0.7);
       }
 
       .has-header {
