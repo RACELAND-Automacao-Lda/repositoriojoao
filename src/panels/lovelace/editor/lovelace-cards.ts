@@ -9,10 +9,10 @@ export const coreCards: Card[] = [
     type: "button",
     showElement: true,
   },
-  {
-    type: "calendar",
-    showElement: true,
-  },
+  // {
+  //   type: "calendar",
+  //   showElement: true,
+  // },
   {
     type: "entities",
     showElement: true,
@@ -81,10 +81,10 @@ export const coreCards: Card[] = [
     type: "sensor",
     showElement: true,
   },
-  {
-    type: "thermostat",
-    showElement: true,
-  },
+  // {
+  //   type: "thermostat",
+  //   showElement: true,
+  // },
   {
     type: "weather-forecast",
     showElement: true,
