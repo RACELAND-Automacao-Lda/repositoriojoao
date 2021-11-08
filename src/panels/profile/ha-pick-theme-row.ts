@@ -43,8 +43,8 @@ export class HaPickThemeRow extends LitElement {
     const themeSettings = this.hass.selectedTheme;
 
     return html`
-      <ha-settings-row .narrow=${this.narrow}>
-        <span slot="heading"
+      <!-- <ha-settings-row .narrow=${this.narrow}> -->
+        <!-- <span slot="heading"
           >${this.hass.localize("ui.panel.profile.themes.header")}</span
         >
         <span slot="description">
@@ -61,7 +61,7 @@ export class HaPickThemeRow extends LitElement {
           >
             ${this.hass.localize("ui.panel.profile.themes.link_promo")}
           </a>
-        </span>
+        </span> -->
         <ha-paper-dropdown-menu
           .label=${this.hass.localize("ui.panel.profile.themes.dropdown_label")}
           dynamic-align
@@ -78,7 +78,7 @@ export class HaPickThemeRow extends LitElement {
             )}
           </paper-listbox>
         </ha-paper-dropdown-menu>
-      </ha-settings-row>
+      <!-- </ha-settings-row> -->
       ${curTheme === "default" || this._supportsModeSelection(curTheme)
         ? html` <div class="inputs">
             <ha-formfield
@@ -237,6 +237,10 @@ export class HaPickThemeRow extends LitElement {
         min-width: 75px;
         flex-grow: 1;
         margin: 0 4px;
+      }
+      ha-paper-dropdown-menu {
+        padding-left: 15px;
+        padding:right: 250px;
       }
     `;
   }

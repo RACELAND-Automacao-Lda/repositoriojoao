@@ -25,9 +25,12 @@ class HaPickLanguageRow extends LocalizeMixin(EventsMixin(PolymerElement)) {
         paper-item[is-rtl] {
           direction: rtl;
         }
+        ha-paper-dropdown-menu {
+          padding: 0px 0px 0px 15px;
+        }
       </style>
-      <ha-settings-row narrow="[[narrow]]">
-        <span slot="heading"
+      <!-- <ha-settings-row narrow="[[narrow]]"> -->
+        <!-- <span slot="heading"
           >[[localize('ui.panel.profile.language.header')]]</span
         >
         <span slot="description">
@@ -37,7 +40,7 @@ class HaPickLanguageRow extends LocalizeMixin(EventsMixin(PolymerElement)) {
             rel="noreferrer"
             >[[localize('ui.panel.profile.language.link_promo')]]</a
           >
-        </span>
+        </span> -->
         <ha-paper-dropdown-menu
           label="[[localize('ui.panel.profile.language.dropdown_label')]]"
           dynamic-align=""
@@ -54,7 +57,7 @@ class HaPickLanguageRow extends LocalizeMixin(EventsMixin(PolymerElement)) {
             </template>
           </paper-listbox>
         </ha-paper-dropdown-menu>
-      </ha-settings-row>
+      <!-- </ha-settings-row> -->
     `;
   }
 
@@ -106,6 +109,7 @@ class HaPickLanguageRow extends LocalizeMixin(EventsMixin(PolymerElement)) {
       this.setLanguageSelection(this.hass.locale.language);
     }
   }
+
 }
 
 customElements.define("ha-pick-language-row", HaPickLanguageRow);

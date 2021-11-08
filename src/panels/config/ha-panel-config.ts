@@ -173,14 +173,14 @@ export const configSections: { [name: string]: PageNavigation[] } = {
       //   translationKey: "ui.panel.config.scene.caption",
       //   iconPath: mdiPalette,
       // },
-      {
-        component: "script",
-        path: "/config/script",
-        translationKey: "ui.panel.config.script.caption",
-        iconPath: mdiScriptText,
-      },
+      // {
+      //   component: "script",
+      //   path: "/config/script",
+      //   translationKey: "ui.panel.config.script.caption",
+      //   iconPath: mdiScriptText,
+      // },
     ],
-  general: [
+  // general: [
   //   // {
   //   //   component: "core",
   //   //   path: "/config/core",
@@ -209,7 +209,7 @@ export const configSections: { [name: string]: PageNavigation[] } = {
   //   //   iconPath: mdiInformation,
   //   //   core: true,
   //   // },
-  ],
+  // ],
   advanced: [
     {
       component: "customize",

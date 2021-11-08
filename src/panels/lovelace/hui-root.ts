@@ -15,7 +15,7 @@ import {
   mdiPlus,
   mdiRefresh,
   mdiShape,
-  mdiViewDashboard,
+  mdiCogs,
 } from "@mdi/js";
 import "@polymer/app-layout/app-header/app-header";
 import "@polymer/app-layout/app-scroll-effects/effects/waterfall";
@@ -127,7 +127,7 @@ class HUIRoot extends LitElement {
                   >
                     <ha-svg-icon .path=${mdiClose}></ha-svg-icon>
                   </mwc-icon-button>
-                  <div main-title>
+                  <!-- <div main-title>
                     ${this.config.title ||
                     this.hass!.localize("ui.panel.lovelace.editor.header")}
                     <mwc-icon-button
@@ -142,23 +142,23 @@ class HUIRoot extends LitElement {
                     >
                       <ha-svg-icon .path=${mdiPencil}></ha-svg-icon>
                     </mwc-icon-button>
-                  </div>
+                  </div> -->
                   <a
                     href=${documentationUrl(this.hass, "/lovelace/")}
                     rel="noreferrer"
                     class="menu-link"
                     target="_blank"
                   >
-                    <mwc-icon-button
+                    <!-- <mwc-icon-button
                       title=${this.hass!.localize(
                         "ui.panel.lovelace.menu.help"
                       )}
                     >
                       <ha-svg-icon .path=${mdiHelpCircle}></ha-svg-icon>
-                    </mwc-icon-button>
+                    </mwc-icon-button> -->
                   </a>
                   <ha-button-menu corner="BOTTOM_START">
-                    <mwc-icon-button
+                    <!-- <mwc-icon-button
                       slot="trigger"
                       .title=${this.hass!.localize(
                         "ui.panel.lovelace.editor.menu.open"
@@ -168,11 +168,11 @@ class HUIRoot extends LitElement {
                       )}
                     >
                       <ha-svg-icon .path=${mdiDotsVertical}></ha-svg-icon>
-                    </mwc-icon-button>
+                    </mwc-icon-button> -->
                     ${__DEMO__ /* No unused entities available in the demo */
                       ? ""
                       : html`
-                          <mwc-list-item
+                          <!-- <mwc-list-item
                             graphic="icon"
                             aria-label=${this.hass!.localize(
                               "ui.panel.lovelace.unused_entities.title"
@@ -187,9 +187,9 @@ class HUIRoot extends LitElement {
                             ${this.hass!.localize(
                               "ui.panel.lovelace.unused_entities.title"
                             )}
-                          </mwc-list-item>
+                          </mwc-list-item> -->
                         `}
-                    <mwc-list-item
+                    <!-- <mwc-list-item
                       graphic="icon"
                       @request-selected=${this._handleRawEditor}
                     >
@@ -200,23 +200,23 @@ class HUIRoot extends LitElement {
                       ${this.hass!.localize(
                         "ui.panel.lovelace.editor.menu.raw_editor"
                       )}
-                    </mwc-list-item>
+                    </mwc-list-item> -->
                     ${__DEMO__ /* No config available in the demo */
                       ? ""
-                      : html`<mwc-list-item
+                      : html`<!-- <mwc-list-item
                             graphic="icon"
                             @request-selected=${this._handleManageDashboards}
                           >
                             <ha-svg-icon
                               slot="graphic"
-                              .path=${mdiViewDashboard}
+                              .path=${mdiCogs}
                             ></ha-svg-icon>
                             ${this.hass!.localize(
                               "ui.panel.lovelace.editor.menu.manage_dashboards"
                             )}
-                          </mwc-list-item>
+                          </mwc-list-item> -->
                           ${this.hass.userData?.showAdvanced
-                            ? html`<mwc-list-item
+                            ? html`<!-- <mwc-list-item
                                 graphic="icon"
                                 @request-selected=${this._handleManageResources}
                               >
@@ -227,7 +227,7 @@ class HUIRoot extends LitElement {
                                 ${this.hass!.localize(
                                   "ui.panel.lovelace.editor.menu.manage_resources"
                                 )}
-                              </mwc-list-item>`
+                              </mwc-list-item> -->`
                             : ""} `}
                   </ha-button-menu>
                 </app-toolbar>
@@ -403,7 +403,7 @@ class HUIRoot extends LitElement {
                       class="menu-link"
                       target="_blank"
                     >
-                      <mwc-list-item
+                      <!--<mwc-list-item
                         graphic="icon"
                         aria-label=${this.hass!.localize(
                           "ui.panel.lovelace.menu.help"
@@ -415,7 +415,7 @@ class HUIRoot extends LitElement {
                           .path=${mdiHelp}
                         ></ha-svg-icon>
                       </mwc-list-item>
-                    </a>
+                    </a> -->
                   </ha-button-menu>
                 </app-toolbar>
               `}

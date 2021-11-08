@@ -1,6 +1,6 @@
 import "@polymer/paper-item/paper-item";
 import "@polymer/paper-listbox/paper-listbox";
-import { html, LitElement, TemplateResult } from "lit";
+import { html, LitElement, TemplateResult, css, CSSResultGroup } from "lit";
 import { customElement, property } from "lit/decorators";
 import { formatTime } from "../../common/datetime/format_time";
 import { fireEvent } from "../../common/dom/fire_event";
@@ -19,13 +19,13 @@ class TimeFormatRow extends LitElement {
   protected render(): TemplateResult {
     const date = new Date();
     return html`
-      <ha-settings-row .narrow=${this.narrow}>
-        <span slot="heading">
+      <!-- <ha-settings-row .narrow=${this.narrow}> -->
+        <!-- <span slot="heading">
           ${this.hass.localize("ui.panel.profile.time_format.header")}
         </span>
         <span slot="description">
           ${this.hass.localize("ui.panel.profile.time_format.description")}
-        </span>
+        </span> -->
         <ha-paper-dropdown-menu
           .label=${this.hass.localize(
             "ui.panel.profile.time_format.dropdown_label"
@@ -56,12 +56,23 @@ class TimeFormatRow extends LitElement {
             })}
           </paper-listbox>
         </ha-paper-dropdown-menu>
-      </ha-settings-row>
+      <!-- </ha-settings-row> -->
     `;
   }
 
+
+
   private async _handleFormatSelection(ev: CustomEvent) {
     fireEvent(this, "hass-time-format-select", ev.detail.item.format);
+  }
+
+  static get styles(): CSSResultGroup {
+    return css`
+    ha-paper-dropdown-menu {
+      padding-left: 15px;
+      padding:right: 250px;
+    }
+    `;
   }
 }
 
