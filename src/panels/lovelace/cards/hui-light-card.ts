@@ -268,6 +268,7 @@ export class HuiLightCard extends LitElement implements LovelaceCard {
     return css`
       ha-card {
         height: 100%;
+        width: 100%;
         box-sizing: border-box;
         position: relative;
         overflow: hidden;
@@ -275,7 +276,7 @@ export class HuiLightCard extends LitElement implements LovelaceCard {
         --name-font-size: 1.2rem;
         --brightness-font-size: 1.2rem;
         border-radius: 25px;
-        background: rgba(53,53,56,0.7);
+        background: rgba(53,53,56,0.5); //tem que ter opacidade mais baixa em comparação as outras cartas não entendo porque
       }
       .more-info {
         position: absolute;
@@ -308,7 +309,7 @@ export class HuiLightCard extends LitElement implements LovelaceCard {
       round-slider {
         --round-slider-path-color: var(--slider-track-color);
         --round-slider-bar-color: var(--primary-color);
-        padding-bottom: 10%;
+        padding-bottom: 5px;
       }
       .light-button {
         color: var(--paper-item-icon-color, #44739e);
