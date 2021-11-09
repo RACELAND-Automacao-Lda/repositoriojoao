@@ -127,10 +127,10 @@ class HUIRoot extends LitElement {
                   >
                     <ha-svg-icon .path=${mdiClose}></ha-svg-icon>
                   </mwc-icon-button>
-                  <!-- <div main-title>
+                  <div main-title>
                     ${this.config.title ||
                     this.hass!.localize("ui.panel.lovelace.editor.header")}
-                    <mwc-icon-button
+                    <!--<mwc-icon-button
                       aria-label=${this.hass!.localize(
                         "ui.panel.lovelace.editor.edit_lovelace.edit_title"
                       )}
@@ -141,8 +141,8 @@ class HUIRoot extends LitElement {
                       @click=${this._editLovelace}
                     >
                       <ha-svg-icon .path=${mdiPencil}></ha-svg-icon>
-                    </mwc-icon-button>
-                  </div> -->
+                    </mwc-icon-button>-->
+                  </div>
                   <a
                     href=${documentationUrl(this.hass, "/lovelace/")}
                     rel="noreferrer"
@@ -158,7 +158,7 @@ class HUIRoot extends LitElement {
                     </mwc-icon-button> -->
                   </a>
                   <ha-button-menu corner="BOTTOM_START">
-                    <!-- <mwc-icon-button
+                    <mwc-icon-button
                       slot="trigger"
                       .title=${this.hass!.localize(
                         "ui.panel.lovelace.editor.menu.open"
@@ -168,7 +168,7 @@ class HUIRoot extends LitElement {
                       )}
                     >
                       <ha-svg-icon .path=${mdiDotsVertical}></ha-svg-icon>
-                    </mwc-icon-button> -->
+                    </mwc-icon-button>
                     ${__DEMO__ /* No unused entities available in the demo */
                       ? ""
                       : html`
@@ -203,7 +203,7 @@ class HUIRoot extends LitElement {
                     </mwc-list-item> -->
                     ${__DEMO__ /* No config available in the demo */
                       ? ""
-                      : html`<!-- <mwc-list-item
+                      : html`<!--<mwc-list-item
                             graphic="icon"
                             @request-selected=${this._handleManageDashboards}
                           >
@@ -214,7 +214,15 @@ class HUIRoot extends LitElement {
                             ${this.hass!.localize(
                               "ui.panel.lovelace.editor.menu.manage_dashboards"
                             )}
-                          </mwc-list-item> -->
+                          </mwc-list-item>-->
+                          <mwc-list-item
+                            graphic="icon"
+                            @request-selected=${this._handleRacelandDashboard}
+                          >
+                            <ha-svg-icon
+                              slot="graphic"
+                              .path=${mdiCogs}
+                            ></ha-svg-icon>
                           ${this.hass.userData?.showAdvanced
                             ? html`<!-- <mwc-list-item
                                 graphic="icon"
@@ -678,12 +686,17 @@ class HUIRoot extends LitElement {
     }
     navigate("/config/lovelace/dashboards");
   }
-
   private _handleManageResources(ev: CustomEvent<RequestSelectedDetail>): void {
     if (!shouldHandleRequestSelectedEvent(ev)) {
       return;
     }
     navigate("/config/lovelace/resources");
+  }
+  private _handleRacelandDashboard(ev: CustomEvent<RequestSelectedDetail>): void {
+    if (!shouldHandleRequestSelectedEvent(ev)) {
+      return;
+    }
+    navigate("http://localhost:8123/raceland-dashboard/0");
   }
 
   private _handleUnusedEntities(ev: CustomEvent<RequestSelectedDetail>): void {

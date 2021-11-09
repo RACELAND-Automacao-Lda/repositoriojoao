@@ -59,7 +59,7 @@ export class HuiButtonCard extends LitElement implements LovelaceCard {
       maxEntities,
       entities,
       entitiesFallback,
-      ["light", "switch"]
+      ["switch"]
     );
 
     return {
@@ -287,7 +287,8 @@ export class HuiButtonCard extends LitElement implements LovelaceCard {
         ha-icon + span {
           margin-top: 8px;
           margin-bottom: 5px;
-          padding: 0px 75px 5px 0px;
+          padding: 0px 125px 5px 0px;
+          text-align: left;
         }
 
         ha-icon,
@@ -296,7 +297,8 @@ export class HuiButtonCard extends LitElement implements LovelaceCard {
         }
 
         .state {
-          padding: 0px 125px 65px 15px;
+          padding: 0px 125px 65px 0px;
+          text-align: left;
         }
       `,
     ];

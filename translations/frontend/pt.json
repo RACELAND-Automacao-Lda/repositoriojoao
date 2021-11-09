@@ -3448,6 +3448,7 @@
                     },
                     "menu": {
                         "manage_dashboards": "Gerir Dashboards",
+                        "Raceland_Dashboard": "Raceland Dashboard",
                         "manage_resources": "Gerir recursos",
                         "open": "Abrir menu Lovelace IU",
                         "raw_editor": "Editor de configuração do código-fonte"

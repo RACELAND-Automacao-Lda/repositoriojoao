@@ -370,5 +370,6 @@ export const baseEntrypointStyles = css`
     color: var(--primary-text-color);
     height: calc(100vh - 32px);
     width: 100vw;
+    border-radius: 25px;
   }
 `;
