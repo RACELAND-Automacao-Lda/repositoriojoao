@@ -1,5 +1,5 @@
 import "@polymer/paper-input/paper-input";
-import { CSSResultGroup, html, LitElement, TemplateResult } from "lit";
+import { CSSResultGroup, html, LitElement, TemplateResult, css } from "lit";
 import { customElement, property, state } from "lit/decorators";
 import { assert, boolean, object, optional, string, assign } from "superstruct";
 import { fireEvent } from "../../../../common/dom/fire_event";
@@ -147,7 +147,7 @@ export class HuiButtonCardEditor
           ></ha-icon-input>
         </div>
         <div class="side-by-side">
-          <div>
+
             <ha-formfield
               .label=${this.hass.localize(
                 "ui.panel.lovelace.editor.card.generic.show_name"
@@ -159,9 +159,9 @@ export class HuiButtonCardEditor
                 .configValue=${"show_name"}
                 @change=${this._change}
               ></ha-switch>
-            </ha-formfield>
-          </div>
-          <div>
+            </ha-formfield>Mostrar nome?
+            <p>
+            </p>
             <ha-formfield
               .label=${this.hass.localize(
                 "ui.panel.lovelace.editor.card.generic.show_state"
@@ -173,9 +173,9 @@ export class HuiButtonCardEditor
                 .configValue=${"show_state"}
                 @change=${this._change}
               ></ha-switch>
-            </ha-formfield>
-          </div>
-          <div>
+            </ha-formfield>Mostrar estado?
+            <p>
+            </p>
             <ha-formfield
               .label=${this.hass.localize(
                 "ui.panel.lovelace.editor.card.generic.show_icon"
@@ -187,8 +187,9 @@ export class HuiButtonCardEditor
                 .configValue=${"show_icon"}
                 @change=${this._change}
               ></ha-switch>
-            </ha-formfield>
-          </div>
+            </ha-formfield>Mostrar icon?
+            <p>
+            </p>
         </div>
         <div class="side-by-side">
           <paper-input
@@ -293,8 +294,43 @@ export class HuiButtonCardEditor
     fireEvent(this, "config-changed", { config: newConfig });
   }
 
+  // static get styles(): CSSResultGroup {
+  //   return configElementStyle;
+  // }
   static get styles(): CSSResultGroup {
-    return configElementStyle;
+    return css`
+      .option {
+        padding: 4px 0px;
+        cursor: pointer;
+      }
+      .row {
+        display: flex;
+        margin-bottom: -14px;
+        pointer-events: none;
+      }
+      .title {
+        padding-left: 16px;
+        margin-top: -6px;
+        pointer-events: none;
+      }
+      .secondary {
+        padding-left: 40px;
+        color: var(--secondary-text-color);
+        pointer-events: none;
+      }
+      .values {
+        padding-left: 16px;
+        background: var(--secondary-background-color);
+        display: grid;
+      }
+      ha-formfield {
+        padding: 0px 10px 0px 20px;
+        max-width: 300px;
+      }
+      .div-options {
+        padding: 10px 0px 0px 0px;
+      }
+    `;
   }
 }
 

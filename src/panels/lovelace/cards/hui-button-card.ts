@@ -253,57 +253,53 @@ export class HuiButtonCard extends LitElement implements LovelaceCard {
     return [
       iconColorCSS,
       css`
-        ha-card {
-          cursor: pointer;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          text-align: center;
-          padding: 0px 0px 0px 0px;
-          overflow: hidden;
-          text-align: center;
-          font-size: 1.2rem;
-          height: 100%;
-          width: 100%;
-          box-sizing: border-box;
-          justify-content: center;
-          position: relative;
-          border-radius: 25px;
-          background: rgba(53,53,56,0.7);
-        }
+      ha-card {
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 0px 0px 0px 0px;
+        overflow: hidden;
+        text-align: center;
+        font-size: 1.2rem;
+        height: 100%;
+        width: 100%;
+        box-sizing: border-box;
+        justify-content: center;
+        position: relative;
+        border-radius: 25px;
+        background: rgba(53,53,56,0.7);
+      }
 
-        ha-card:focus {
-          outline: none;
-        }
+      ha-icon {
+        width: 40%;
+        height: auto;
+        color: var(--paper-item-icon-color, #fdd835);
+        --mdc-icon-size: 100%;
+        margin-right: 125px;
+        padding-bottom: 20px;
+      }
 
-        ha-icon {
-          width: 40%;
-          height: auto;
-          color: var(--paper-item-icon-color, #fdd835);
-          --mdc-icon-size: 100%;
-          margin-right: 125px;
-        }
+      ha-icon + span {
+        margin-top: 8px;
+        margin-bottom: 5px;
+        padding: 0px 125px 5px 0px;
+        text-align: left;
+      }
 
-        ha-icon + span {
-          margin-top: 8px;
-          margin-bottom: 5px;
-          padding: 0px 125px 5px 0px;
-          text-align: left;
-        }
+      ha-icon,
+      span {
+        outline: none;
+      }
 
-        ha-icon,
-        span {
-          outline: none;
-        }
-
-        .state {
-          padding: 0px 125px 65px 0px;
-          text-align: left;
-        }
-      `,
-    ];
-  }
-
+      .state {
+        padding: 0px 125px 35px 0px;
+        text-align: left;
+      }
+    `,
+  ];
+}
   private _computeBrightness(stateObj: HassEntity | LightEntity): string {
     if (!stateObj.attributes.brightness || !this._config?.state_color) {
       return "";

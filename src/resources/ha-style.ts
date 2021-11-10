@@ -2,7 +2,7 @@ import "@polymer/paper-styles/paper-styles";
 import "@polymer/polymer/lib/elements/custom-style";
 import { derivedStyles } from "./styles";
 
-export const DEFAULT_PRIMARY_COLOR = "#828386"; //lower-header and sidebar text colors
+export const DEFAULT_PRIMARY_COLOR = "#E3E3E3"; //lower-header and sidebar text colors
 export const DEFAULT_ACCENT_COLOR = "#000000";
 
 const documentContainer = document.createElement("template");
@@ -16,18 +16,18 @@ documentContainer.innerHTML = `<custom-style>
       height: 100vh;
 
       /* text */
-      --primary-text-color: #000000;
-      --secondary-text-color: #828386;
-      --text-primary-color: #ffffff;
+      --primary-text-color: rgb(32, 33, 36);
+      --secondary-text-color: rgb(95, 99, 104); /* cor do texto secundário */
+      --text-primary-color: rgb(255, 255, 255);
       --text-light-primary-color: #212121;
-      --disabled-text-color: #bdbdbd;
+      --disabled-text-color: rgba(95, 99, 104, 0.4);
 
       /* main interface colors */
-      --primary-color: ${DEFAULT_PRIMARY_COLOR}; /* relativo ao selected tab color */
+      --primary-color: "#f01616"; /* relativo ao selected tab color */
       --dark-primary-color: #828386;
-      --light-primary-color: #ffffff;
-      --accent-color: ${DEFAULT_ACCENT_COLOR};
-      --divider-color: rgba(0, 0, 0, .12);
+      --light-primary-color: #f01616; /* cor do user circle */
+      --accent-color: rgb(240, 22, 22); /* cor dos pequenos icons no sidebar e top header */
+      --divider-color: var(--primary-background-color);
 
       --scrollbar-thumb-color: rgb(130, 131, 134);
 
@@ -37,25 +37,25 @@ documentContainer.innerHTML = `<custom-style>
       --info-color: #039be5;
 
       /* backgrounds */
-      --card-background-color: #aaabad; /* grey background for everything */
-      --primary-background-color: #ffffff;
-      --secondary-background-color: #828386; /* behind the cards on state */
+      --card-background-color: #ffffff; /* background for sidebar and cards */
+      --primary-background-color: rgb(248, 248, 248); /* background color of horizontal-layout */
+      --secondary-background-color: rgb(230, 230, 230); /* behind the cards on state */
 
       /* for header */
       --header-height: 56px;
 
       /* for label-badge */
-      --label-badge-red: #DF4C1E;
-      --label-badge-blue: #039be5;
-      --label-badge-green: #0DA035;
-      --label-badge-yellow: #f4b400;
-      --label-badge-grey: #9e9e9e;
+      --label-badge-red: #c7484c;
+      --label-badge-blue: #1a73e8;
+      --label-badge-green: #6dc071;
+      --label-badge-yellow: #d9b757;
+      --label-badge-grey: #5f6267;
 
       /* states */
-      --state-icon-color: #ffffff;
-      --state-icon-active-color: #FDD835;
+      --state-icon-color: #f01616;
+      --state-icon-active-color: #5f6368;
       --state-icon-error-color: #9ba1b3;
-      --state-unavailable-color: #9ba1b3;
+      --state-unavailable-color: var(--disabled-text-color);
       --state-on-color: #66a61e;
       --state-off-color: #ff0029;
       --state-home-color: #66a61e;
@@ -85,9 +85,9 @@ documentContainer.innerHTML = `<custom-style>
 
       /* opacity for dark text on a light background */
       --dark-divider-opacity: 0.12;
-      --dark-disabled-opacity: 0.38;
-      --dark-secondary-opacity: 0.54;
-      --dark-primary-opacity: 0.87;
+      --dark-disabled-opacity: 0.3; /* 0.38 */
+      --dark-secondary-opacity: 0.7; /* 0.54 */
+      --dark-primary-opacity: 1.0; /* 0.87 */
 
       /* opacity for light text on a dark background */
       --light-divider-opacity: 0.12;
@@ -101,7 +101,7 @@ documentContainer.innerHTML = `<custom-style>
       --rgb-primary-text-color: 33, 33, 33;
       --rgb-secondary-text-color: 114, 114, 114;
       --rgb-text-primary-color: 255, 255, 255;
-      --rgb-card-background-color: 48, 48, 51;
+      --rgb-card-background-color: 255, 255, 255;
 
       /* Vaadin typography */
       --material-h6-font-size: 1.25rem;
