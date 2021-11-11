@@ -916,7 +916,7 @@ class HaSidebar extends LitElement {
         }
 
         a:not(.iron-selected):focus::before {
-          background-color: currentColor;
+          // background-color: currentColor;
           opacity: var(--dark-divider-opacity, 0.2);
           margin: 4px 8px;
         }

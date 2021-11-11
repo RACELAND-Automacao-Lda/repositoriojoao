@@ -264,12 +264,13 @@ export class HuiButtonCard extends LitElement implements LovelaceCard {
         text-align: center;
         font-size: 1.2rem;
         height: 100%;
-        width: 100%;
+        width: 75%; //100% hui-card-options
         box-sizing: border-box;
         justify-content: center;
         position: relative;
         border-radius: 25px;
         background: rgba(53,53,56,0.7);
+        color:white;
       }
 
       ha-icon {
@@ -277,14 +278,16 @@ export class HuiButtonCard extends LitElement implements LovelaceCard {
         height: auto;
         color: var(--paper-item-icon-color, #fdd835);
         --mdc-icon-size: 100%;
-        margin-right: 125px;
-        padding-bottom: 20px;
+        margin: 0% 45% 0% 0%;
+        padding: 5% 10% 0% 0%;
+      }
+
+      span {
+        margin: 5% 50% 0% 0%;
+        padding: 0%; 100% 0% 0%;
       }
 
       ha-icon + span {
-        margin-top: 8px;
-        margin-bottom: 5px;
-        padding: 0px 125px 5px 0px;
         text-align: left;
       }
 
@@ -294,8 +297,19 @@ export class HuiButtonCard extends LitElement implements LovelaceCard {
       }
 
       .state {
-        padding: 0px 125px 35px 0px;
+        margin: 0% 50% 5% 0%;
+        padding: 0%; 100% 5% 0%;
         text-align: left;
+      }
+
+      .hassbut.state-on {
+        background: rgba(255,255,255,0.7);
+        color: black;
+      }
+
+      .hassbut {
+        display: grid;
+        grid-template-columns: 50% 50%;
       }
     `,
   ];

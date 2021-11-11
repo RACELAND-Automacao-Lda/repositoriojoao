@@ -222,7 +222,8 @@ class HUIRoot extends LitElement {
                             <ha-svg-icon
                               slot="graphic"
                               .path=${mdiCogs}
-                            ></ha-svg-icon>
+                            ></ha-svg-icon>Raceland Dashboard
+                            </mwc-list-item>
                           ${this.hass.userData?.showAdvanced
                             ? html`<!-- <mwc-list-item
                                 graphic="icon"
@@ -696,7 +697,7 @@ class HUIRoot extends LitElement {
     if (!shouldHandleRequestSelectedEvent(ev)) {
       return;
     }
-    navigate("http://localhost:8123/raceland-dashboard/0");
+    navigate("/raceland-dashboard/0");
   }
 
   private _handleUnusedEntities(ev: CustomEvent<RequestSelectedDetail>): void {

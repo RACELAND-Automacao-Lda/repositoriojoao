@@ -235,14 +235,14 @@ class HaPanelProfile extends LitElement {
         }
 
         .content {
-          display: block;
+          display: grid;
           max-width: 600px;
           margin: 0 auto;
           padding-bottom: env(safe-area-inset-bottom);
         }
 
         .content > * {
-          display: block;
+          display: grid;
           margin: 24px 0;
         }
 

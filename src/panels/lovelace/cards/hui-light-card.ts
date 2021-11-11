@@ -268,7 +268,7 @@ export class HuiLightCard extends LitElement implements LovelaceCard {
     return css`
       ha-card {
         height: 100%;
-        width: 100%;
+        width: 75%; //100% hui-card-options
         box-sizing: border-box;
         position: relative;
         overflow: hidden;
