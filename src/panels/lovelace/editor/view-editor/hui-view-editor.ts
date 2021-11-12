@@ -121,7 +121,7 @@ export class HuiViewEditor extends LitElement {
           .configValue=${"theme"}
           @value-changed=${this._valueChanged}
         ></hui-theme-select-editor>
-        <!-- <paper-dropdown-menu
+        <!--<paper-dropdown-menu
           .label=${this.hass.localize(
             "ui.panel.lovelace.editor.edit_view.type"
           )}
@@ -140,7 +140,7 @@ export class HuiViewEditor extends LitElement {
               </paper-item>`
     )}
           </paper-listbox>
-        </paper-dropdown-menu> -->
+        </paper-dropdown-menu>-->
       </div>
     `;
   }

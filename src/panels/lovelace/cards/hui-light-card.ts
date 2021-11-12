@@ -267,17 +267,63 @@ export class HuiLightCard extends LitElement implements LovelaceCard {
   static get styles(): CSSResultGroup {
     return css`
       ha-card {
-        height: 100%;
-        width: 75%; //100% hui-card-options
-        box-sizing: border-box;
-        position: relative;
-        overflow: hidden;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         text-align: center;
-        --name-font-size: 1.2rem;
-        --brightness-font-size: 1.2rem;
-        border-radius: 25px;
+        padding: 0px 0px 0px 0px;
+        //padding: 0% 25% 0% 25%;
+        font-size: 1.2rem;
+        width: 100%; //100% hui-card-options
+        height: 100%;
+        box-sizing: border-box;
+        justify-content: center;
+        position: relative;
         background: rgba(53,53,56,0.5); //tem que ter opacidade mais baixa em comparação as outras cartas não entendo porque
+        color: white;
+        border-radius: 25px;
+        // overflow: hidden;
+        // --name-font-size: 1.2rem;
+        // --brightness-font-size: 1.2rem;
       }
+
+      ha-icon {
+        width: 57%;
+        height: auto;
+        padding: 0% 10% 0% 0%;
+        color: var(--paper-item-icon-color, #fdd835);
+        --mdc-icon-size: 100%;
+        margin: 0% 45% 0% 0%;
+      }
+
+      ha-icon + span {
+        text-align: left;
+      }
+
+      span {
+        margin: 5% 50% 0% 0%;
+        padding: 0% 100% 0% 0%;
+      }
+
+      ha-icon,
+      span {
+        outline: none;
+      }
+
+      .light-button.state-on {
+        color: var(--paper-item-icon-active-color, #fdd835);
+        background: rgba(255,255,255,0.7);
+        padding: 5% 5% 5% 5%;
+      }
+      .light-button.state-off {
+        padding: 5% 5% 5% 5%;
+      }
+      .light-button.state-unavailable {
+        color: var(--state-icon-unavailable-color);
+      }
+
+
       .more-info {
         position: absolute;
         cursor: pointer;
@@ -325,12 +371,7 @@ export class HuiLightCard extends LitElement implements LovelaceCard {
         --mdc-icon-button-size: 100%;
         --mdc-icon-size: 100%;
       }
-      .light-button.state-on {
-        color: var(--paper-item-icon-active-color, #fdd835);
-      }
-      .light-button.state-unavailable {
-        color: var(--state-icon-unavailable-color);
-      }
+
       #info {
         text-align: center;
         margin-top: -56px;

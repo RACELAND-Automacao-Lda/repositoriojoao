@@ -260,17 +260,16 @@ export class HuiButtonCard extends LitElement implements LovelaceCard {
         align-items: center;
         text-align: center;
         padding: 0px 0px 0px 0px;
-        overflow: hidden;
-        text-align: center;
         font-size: 1.2rem;
+        width: 100%; //100% hui-card-options
         height: 100%;
-        width: 75%; //100% hui-card-options
         box-sizing: border-box;
         justify-content: center;
         position: relative;
-        border-radius: 25px;
         background: rgba(53,53,56,0.7);
-        color:white;
+        color: white;
+        border-radius: 25px;
+        overflow: hidden;
       }
 
       ha-icon {
@@ -283,8 +282,8 @@ export class HuiButtonCard extends LitElement implements LovelaceCard {
       }
 
       span {
-        margin: 5% 50% 0% 0%;
-        padding: 0%; 100% 0% 0%;
+        margin: 5% 50% 1% 0%;
+        padding: 0%; 100% 1% 0%;
       }
 
       ha-icon + span {
@@ -305,6 +304,13 @@ export class HuiButtonCard extends LitElement implements LovelaceCard {
       .hassbut.state-on {
         background: rgba(255,255,255,0.7);
         color: black;
+        padding: 5% 5% 5% 5%;
+        text-align: center;
+      }
+
+      .hassbut.state-off {
+        padding: 5% 5% 5% 5%;
+        text-align: center;
       }
 
       .hassbut {
