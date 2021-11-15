@@ -273,9 +273,8 @@ export class HuiLightCard extends LitElement implements LovelaceCard {
         align-items: center;
         text-align: center;
         padding: 0px 0px 0px 0px;
-        //padding: 0% 25% 0% 25%;
         font-size: 1.2rem;
-        width: 100%; //100% hui-card-options
+        width: 100%;
         height: 100%;
         box-sizing: border-box;
         justify-content: center;
@@ -338,6 +337,7 @@ export class HuiLightCard extends LitElement implements LovelaceCard {
         display: flex;
         flex-direction: column;
         justify-content: center;
+        //align-items: stretch;
       }
       #controls {
         display: flex;

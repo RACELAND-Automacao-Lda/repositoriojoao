@@ -165,7 +165,7 @@ export class HuiCardPicker extends LitElement {
       ...card,
     })).reverse();
     if (customCards.length > 0) {
-      const customCardToRemove = ["Browser Player","More-info card", "Button-card", "Mini Media Player", "Upcoming Media Card", "Swipe Card", "Mini Graph Card", "RGB Light Card", "Search Card", "Gap Card", "Layout Card", "Layout Break", "Auto Entities", "Entidades", "Sensor"]; // add the rest
+      const customCardToRemove = ["Browser Player","More-info card", "Button-card", "Mini Media Player", "Upcoming Media Card", "Swipe Card", "Mini Graph Card", "RGB Light Card", "Search Card", "Layout Card", "Layout Break", "Auto Entities", "Entidades", "Sensor"]; // add the rest
       cards = cards
         .concat(
           customCards

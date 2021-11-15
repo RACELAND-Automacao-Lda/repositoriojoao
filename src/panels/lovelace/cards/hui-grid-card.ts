@@ -4,11 +4,11 @@ import { LovelaceCardEditor } from "../types";
 import { HuiStackCard } from "./hui-stack-card";
 import { GridCardConfig } from "./types";
 
-const DEFAULT_COLUMNS = 3;
+const DEFAULT_COLUMNS = 2; //3
 const SQUARE_ROW_HEIGHTS_BY_COLUMNS = {
-  1: 5,
-  2: 3,
-  3: 2,
+  1: 5, //5
+  2: 5, //3
+  3: 5, //2
 };
 
 class HuiGridCard extends HuiStackCard<GridCardConfig> {
@@ -74,11 +74,13 @@ class HuiGridCard extends HuiStackCard<GridCardConfig> {
       css`
         #root {
           display: grid;
+          align-items: stretch;
           grid-template-columns: repeat(
             var(--grid-card-column-count, ${DEFAULT_COLUMNS}),
             minmax(0, 1fr)
           );
           grid-gap: var(--grid-card-gap, 8px);
+          padding: 0px 0px 8px 0px;
         }
         :host([square]) #root {
           grid-auto-rows: 1fr;
@@ -86,7 +88,9 @@ class HuiGridCard extends HuiStackCard<GridCardConfig> {
         :host([square]) #root::before {
           content: "";
           width: 0;
-          padding-bottom: 100%;
+          padding-bottom: 25%;
+          // padding: 25% 25% 25% 25%;
+          align-items: center;
           grid-row: 1 / 1;
           grid-column: 1 / 1;
         }

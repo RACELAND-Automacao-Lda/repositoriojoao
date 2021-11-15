@@ -259,7 +259,7 @@ export class HuiButtonCard extends LitElement implements LovelaceCard {
         flex-direction: column;
         align-items: center;
         text-align: center;
-        padding: 0px 0px 0px 0px;
+        padding: 0px 0px 20px 0px;
         font-size: 1.2rem;
         width: 100%; //100% hui-card-options
         height: 100%;
@@ -297,7 +297,7 @@ export class HuiButtonCard extends LitElement implements LovelaceCard {
 
       .state {
         margin: 0% 50% 5% 0%;
-        padding: 0%; 100% 5% 0%;
+        padding: 0%; 100% 10% 0%;
         text-align: left;
       }
 
