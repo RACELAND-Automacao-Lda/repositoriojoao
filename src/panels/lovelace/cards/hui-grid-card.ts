@@ -89,7 +89,6 @@ class HuiGridCard extends HuiStackCard<GridCardConfig> {
           content: "";
           width: 0;
           padding-bottom: 25%;
-          // padding: 25% 25% 25% 25%;
           align-items: center;
           grid-row: 1 / 1;
           grid-column: 1 / 1;

@@ -175,9 +175,9 @@ export class HuiDialogEditCard
                     rel="noreferrer"
                     dir=${computeRTLDirection(this.hass)}
                   >
-                    <mwc-icon-button>
+                    <!--<mwc-icon-button>
                       <ha-svg-icon .path=${mdiHelpCircle}></ha-svg-icon>
-                    </mwc-icon-button>
+                    </mwc-icon-button>-->
                   </a>
                 `
               : ""}
@@ -210,7 +210,7 @@ export class HuiDialogEditCard
               : ``}
           </div>
         </div>
-        ${this._cardConfig !== undefined
+        <!--${this._cardConfig !== undefined
           ? html`
               <mwc-button
                 slot="secondaryAction"
@@ -225,7 +225,7 @@ export class HuiDialogEditCard
                 )}
               </mwc-button>
             `
-          : ""}
+          : ""}-->
         <div slot="primaryAction" @click=${this._save}>
           <mwc-button @click=${this._cancel}>
             ${this.hass!.localize("ui.common.cancel")}

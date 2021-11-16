@@ -1,3 +1,4 @@
+import { mdiConsoleNetworkOutline } from "@mdi/js";
 import { html, TemplateResult } from "lit";
 import { customElement } from "lit/decorators";
 import {
@@ -50,7 +51,28 @@ export class HuiGridCardEditor extends HuiStackCardEditor {
     return html`
       <div class="card-config">
         <div class="side-by-side">
-          <paper-input
+        <paper-dropdown-menu
+
+        .label="${this.hass.localize(
+          "ui.panel.lovelace.editor.card.grid.columns"
+        )} (${this.hass.localize(
+          "ui.panel.lovelace.editor.card.config.optional"
+        )})">
+        <paper-listbox
+        @iron-select=${this._handleColumnsChanged}
+        slot="dropdown-content"
+        attr-for-selected="value"
+        .configValue=${"columns"}
+        selected='1'
+        >
+
+        <paper-item .value=${2}>2 Colunas
+        </paper-item>
+        <paper-item .value=${3}>3 Colunas
+        </paper-item>
+        </paper-listbox>
+        </paper-dropdown-menu>
+        <paper-input
             .label="${this.hass.localize(
               "ui.panel.lovelace.editor.card.grid.columns"
             )} (${this.hass.localize(
@@ -80,6 +102,7 @@ export class HuiGridCardEditor extends HuiStackCardEditor {
   }
 
   private _handleColumnsChanged(ev): void {
+    console.log("EV", ev)
     if (!this._config) {
       return;
     }
@@ -96,6 +119,7 @@ export class HuiGridCardEditor extends HuiStackCardEditor {
         columns: value,
       };
     }
+    console.log("configuração", this._config);
     fireEvent(this, "config-changed", { config: this._config });
   }
 

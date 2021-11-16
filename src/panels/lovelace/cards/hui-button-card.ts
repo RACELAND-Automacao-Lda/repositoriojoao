@@ -53,22 +53,16 @@ export class HuiButtonCard extends LitElement implements LovelaceCard {
     entities: string[],
     entitiesFallback: string[]
   ): ButtonCardConfig {
+    const includeDomains = ["switch"];
     const maxEntities = 1;
     const foundEntities = findEntities(
       hass,
       maxEntities,
       entities,
       entitiesFallback,
-      ["switch"]
+      includeDomains
     );
-
-    return {
-      type: "button",
-      tap_action: {
-        action: "toggle",
-      },
-      entity: foundEntities[0] || "",
-    };
+    return { type: "button", entity: foundEntities[0] || "", "show_name": true, "show_state": true, "name": "Raceland", "show_preview": true};
   }
 
   @property({ attribute: false }) public hass?: HomeAssistant;
@@ -257,11 +251,12 @@ export class HuiButtonCard extends LitElement implements LovelaceCard {
         cursor: pointer;
         display: flex;
         flex-direction: column;
-        align-items: center;
-        text-align: center;
-        padding: 0px 0px 20px 0px;
+        align-items: left;
+        text-align: left;
+        padding: 0px 0px 20px 15px;
+        margin-bottom: 8px;
         font-size: 1.2rem;
-        width: 100%; //100% hui-card-options
+        width: 100%;
         height: 100%;
         box-sizing: border-box;
         justify-content: center;
@@ -273,26 +268,17 @@ export class HuiButtonCard extends LitElement implements LovelaceCard {
       }
 
       ha-icon {
-        width: 40%;
+        width: auto;
         height: auto;
+        padding: 5% 50% 0% 0%;
+        margin: 0% 0% 0% 0%;
         color: var(--paper-item-icon-color, #fdd835);
         --mdc-icon-size: 100%;
-        margin: 0% 45% 0% 0%;
-        padding: 5% 10% 0% 0%;
-      }
-
-      span {
-        margin: 5% 50% 1% 0%;
-        padding: 0%; 100% 1% 0%;
+        align-items: left;
       }
 
       ha-icon + span {
         text-align: left;
-      }
-
-      ha-icon,
-      span {
-        outline: none;
       }
 
       .state {
@@ -301,21 +287,41 @@ export class HuiButtonCard extends LitElement implements LovelaceCard {
         text-align: left;
       }
 
+      span {
+        margin: 5% 50% 1% 0%;
+        padding: 0% 100% 1% 0%;
+      }
+
+      ha-icon,
+      span {
+        outline: none;
+      }
+
       .hassbut.state-on {
         background: rgba(255,255,255,0.7);
         color: black;
         padding: 5% 5% 5% 5%;
-        text-align: center;
+        text-align: left;
       }
 
       .hassbut.state-off {
         padding: 5% 5% 5% 5%;
-        text-align: center;
+        text-align: left;
       }
 
       .hassbut {
         display: grid;
         grid-template-columns: 50% 50%;
+      }
+
+      .state-div {
+        padding: 5px 0px 5px 10px;
+        align-items: left;
+      }
+
+      .name-div {
+        padding: 5px 0px 0px 10px;
+        align-items: left;
       }
     `,
   ];
