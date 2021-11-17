@@ -84,6 +84,7 @@ class HuiGridCard extends HuiStackCard<GridCardConfig> {
         }
         :host([square]) #root {
           grid-auto-rows: 1fr;
+          //width: 125.328px; //dimensão correta
         }
         :host([square]) #root::before {
           content: "";

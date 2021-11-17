@@ -266,63 +266,20 @@ export class HuiLightCard extends LitElement implements LovelaceCard {
 
   static get styles(): CSSResultGroup {
     return css`
-      ha-card {
-        cursor: pointer;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        padding: 0px 0px 0px 0px;
-        font-size: 1.2rem;
-        width: 100%;
-        height: 100%;
-        box-sizing: border-box;
-        justify-content: center;
-        position: relative;
-        background: rgba(53,53,56,0.5); //tem que ter opacidade mais baixa em comparação as outras cartas não entendo porque
-        color: white;
-        border-radius: 25px;
-        // overflow: hidden;
-        // --name-font-size: 1.2rem;
-        // --brightness-font-size: 1.2rem;
+    ha-card {
+      height: 100%;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      box-sizing: border-box;
+      border-radius: 25px;
+      background: rgba(53,53,56,0.5);
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+      --name-font-size: 1.2rem;
+      --brightness-font-size: 1.2rem;
       }
-
-      ha-icon {
-        width: auto;
-        height: auto;
-        padding: 0% 10% 0% 0%;
-        color: var(--paper-item-icon-color, #fdd835);
-        --mdc-icon-size: 100%;
-        margin: 0% 45% 0% 0%;
-      }
-
-      ha-icon + span {
-        text-align: left;
-      }
-
-      span {
-        margin: 5% 50% 0% 0%;
-        padding: 0% 100% 0% 0%;
-      }
-
-      ha-icon,
-      span {
-        outline: none;
-      }
-
-      .light-button.state-on {
-        color: var(--paper-item-icon-active-color, #fdd835);
-        // background: rgba(255,255,255,0.7);
-        padding: 5% 5% 5% 5%;
-      }
-      .light-button.state-off {
-        padding: 5% 5% 5% 5%;
-      }
-      .light-button.state-unavailable {
-        color: var(--state-icon-unavailable-color);
-      }
-
-
       .more-info {
         position: absolute;
         cursor: pointer;
@@ -336,14 +293,20 @@ export class HuiLightCard extends LitElement implements LovelaceCard {
         height: 100%;
         display: flex;
         flex-direction: column;
+        padding: 0% 100% 0% 100%;
         justify-content: center;
-        //align-items: stretch;
       }
       #controls {
         display: flex;
         justify-content: center;
-        padding: 16px;
+        padding: 16px 150px 16px 150px;
         position: relative;
+      }
+      #info {
+        text-align: center;
+        margin-top: -56px;
+        padding: 16px;
+        font-size: var(--name-font-size);
       }
       #slider {
         height: 100%;
@@ -355,7 +318,8 @@ export class HuiLightCard extends LitElement implements LovelaceCard {
       round-slider {
         --round-slider-path-color: var(--slider-track-color);
         --round-slider-bar-color: var(--primary-color);
-        padding-bottom: 5px;
+        //padding-bottom: 5px;
+        padding: 20px 10px 10px 10px 10px;
       }
       .light-button {
         color: var(--paper-item-icon-color, #44739e);
@@ -371,12 +335,21 @@ export class HuiLightCard extends LitElement implements LovelaceCard {
         --mdc-icon-button-size: 100%;
         --mdc-icon-size: 100%;
       }
-
-      #info {
-        text-align: center;
-        margin-top: -56px;
-        padding: 16px;
-        font-size: var(--name-font-size);
+      .light-button.state-on {
+        color: var(--paper-item-icon-active-color, #fdd835);
+        background: rgb(255,255,255);
+        color: #fdd835;
+      }
+      .light-button.state-unavailable {
+        color: var(--state-icon-unavailable-color);
+      }
+      .state-on {
+        background: rgb(255,255,255);
+        color: black;
+      }
+      .state-off {
+        background: rgb(0,0,0);
+        color: white;
       }
       .brightness {
         font-size: var(--brightness-font-size);
@@ -391,6 +364,7 @@ export class HuiLightCard extends LitElement implements LovelaceCard {
     `;
   }
 }
+
 
 declare global {
   interface HTMLElementTagNameMap {
