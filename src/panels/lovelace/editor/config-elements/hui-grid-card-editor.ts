@@ -51,7 +51,7 @@ export class HuiGridCardEditor extends HuiStackCardEditor {
     return html`
       <div class="card-config">
         <div class="side-by-side">
-        <paper-dropdown-menu
+        <!--<paper-dropdown-menu
 
         .label="${this.hass.localize(
           "ui.panel.lovelace.editor.card.grid.columns"
@@ -71,7 +71,7 @@ export class HuiGridCardEditor extends HuiStackCardEditor {
         <paper-item .value=${3}>3 Colunas
         </paper-item>
         </paper-listbox>
-        </paper-dropdown-menu>
+        </paper-dropdown-menu>-->
         <paper-input
             .label="${this.hass.localize(
               "ui.panel.lovelace.editor.card.grid.columns"

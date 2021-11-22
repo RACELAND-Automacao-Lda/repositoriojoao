@@ -3794,7 +3794,7 @@
                 "authorizing_client": "You're about to give {clientId} access to your Home Assistant instance.",
                 "form": {
                     "error": "Error: {error}",
-                    "next": "Next",
+                    "next": "Próximo",
                     "providers": {
                         "command_line": {
                             "abort": {
@@ -3807,8 +3807,8 @@
                             "step": {
                                 "init": {
                                     "data": {
-                                        "password": "Password",
-                                        "username": "Username"
+                                        "password": "Palavra-passe",
+                                        "username": "Utilizador"
                                     }
                                 },
                                 "mfa": {

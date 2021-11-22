@@ -292,6 +292,7 @@ class HuiPictureGlanceCard extends LitElement implements LovelaceCard {
         min-height: 48px;
         overflow: hidden;
         height: 100%;
+        width: 100%;
         box-sizing: border-box;
         border-radius: 25px;
       }

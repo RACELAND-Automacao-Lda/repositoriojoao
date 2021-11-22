@@ -165,7 +165,7 @@ export class HuiCardPicker extends LitElement {
       ...card,
     })).reverse();
     if (customCards.length > 0) {
-      const customCardToRemove = ["Browser Player","More-info card", "Button-card", "Mini Media Player", "Upcoming Media Card", "Swipe Card", "Mini Graph Card", "RGB Light Card", "Search Card", "Layout Card", "Layout Break", "Auto Entities", "Entidades", "Sensor"]; // add the rest
+      const customCardToRemove = ["Browser Player","More-info card", "Button-Card", "bar-card", "Mini Media Player", "Upcoming Media Card", "Swipe Card", "Mini Graph Card", "RGB Light Card", "Search Card", "Layout Card", "Layout Break", "Auto Entities", "Entidades", "Sensor"]; // add the rest
       cards = cards
         .concat(
           customCards
@@ -315,12 +315,13 @@ export class HuiCardPicker extends LitElement {
         .cards-container {
           display: grid;
           grid-gap: 8px 8px;
-          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
           margin-top: 20px;
         }
         .card {
           height: 100%;
-          max-width: 500px;
+          width: 100%;
+          max-width: 300px;
           display: flex;
           flex-direction: column;
           border-radius: var(--ha-card-border-radius, 4px);
@@ -346,17 +347,18 @@ export class HuiCardPicker extends LitElement {
         }
         .preview {
           pointer-events: none;
-          margin: 20px;
-          padding: 20px 20px 20px 35px;
           flex-grow: 1;
           display: flex;
           align-items: center;
           justify-content: center;
-          width: 64%;
+          border-radius: 25px;
+          width: 100%;
+          height: 100%;
+          padding-top: 10px;
 
         }
         .preview > :first-child {
-          zoom: 0.6;
+          zoom: 0.9;
           display: block;
           width: 100%;
         }

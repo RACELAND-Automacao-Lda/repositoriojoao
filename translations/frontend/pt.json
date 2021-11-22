@@ -2662,7 +2662,7 @@
                         "password_not_match": "As palavras-passe não coincidem"
                     },
                     "caption": "Utilizadores",
-                    "description": "Gerir as contas de utilizador do Home Assistant",
+                    "description": "Gerir as contas de utilizador do Raceland HA",
                     "editor": {
                         "activate_user": "Ativar utilizador",
                         "active": "Ativo",
@@ -3566,7 +3566,7 @@
                 "authorizing_client": "Está prestes a dar acesso a {clientId} à sua instância do Home Assistant.",
                 "form": {
                     "error": "Erro: {error}",
-                    "next": "Seguinte",
+                    "next": "Próximo",
                     "providers": {
                         "command_line": {
                             "abort": {

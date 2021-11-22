@@ -2,21 +2,8 @@ import "@material/mwc-ripple";
 import type { Ripple } from "@material/mwc-ripple";
 import { RippleHandlers } from "@material/mwc-ripple/ripple-handlers";
 import { HassEntity } from "home-assistant-js-websocket";
-import {
-  css,
-  CSSResultGroup,
-  html,
-  LitElement,
-  PropertyValues,
-  TemplateResult,
-} from "lit";
-import {
-  customElement,
-  eventOptions,
-  property,
-  queryAsync,
-  state,
-} from "lit/decorators";
+import { css, CSSResultGroup, html, LitElement, PropertyValues, TemplateResult } from "lit";
+import { customElement, eventOptions, property, queryAsync, state } from "lit/decorators";
 import { ifDefined } from "lit/directives/if-defined";
 import { styleMap } from "lit/directives/style-map";
 import { DOMAINS_TOGGLE } from "../../../common/const";
@@ -62,7 +49,7 @@ export class HuiButtonCard extends LitElement implements LovelaceCard {
       entitiesFallback,
       includeDomains
     );
-    return { type: "button", entity: foundEntities[0] || "", "show_name": true, "show_state": true, "name": "Raceland", "show_preview": true};
+    return { type: "button", entity: foundEntities[0] || "", "show_name": true, "show_state": true, "name": "Raceland" };
   }
 
   @property({ attribute: false }) public hass?: HomeAssistant;
@@ -177,6 +164,7 @@ export class HuiButtonCard extends LitElement implements LovelaceCard {
                     : "",
                 })}
               ></ha-icon>
+              <div class="divibut"></div>
             `
           : ""}
         ${this._config.show_name
@@ -185,6 +173,7 @@ export class HuiButtonCard extends LitElement implements LovelaceCard {
                 ${this._config.name ||
                 (stateObj ? computeStateName(stateObj) : "")}
               </span>
+              <div></div>
             `
           : ""}
         ${this._config.show_state && stateObj
@@ -194,7 +183,9 @@ export class HuiButtonCard extends LitElement implements LovelaceCard {
                 stateObj,
                 this.hass.locale
               )}
-            </span>`
+            </span>
+            <div></div>
+            `
           : ""}
         ${this._shouldRenderRipple ? html`<mwc-ripple></mwc-ripple>` : ""}
       </ha-card>
@@ -249,31 +240,31 @@ export class HuiButtonCard extends LitElement implements LovelaceCard {
       css`
       ha-card {
         cursor: pointer;
-        display: flex;
+        display: grid;
         flex-direction: column;
         align-items: left;
         text-align: left;
-        padding: 0px 0px 20px 15px;
-        font-size: 1.2rem;
+        padding: 10% 10% 10% 10%;
+        font-size: 18px;
         width: 100%;
         height: 100%;
         box-sizing: border-box;
         justify-content: center;
         position: relative;
-        background-color: rgba(53,53,56,0.8);
-        //color: white;
+        background-color: rgba(53,53,53,0.8);
+        color: white;
         border-radius: 25px;
         overflow: hidden;
+        grid-template-columns: 50% 50%;
       }
 
       ha-icon {
-        width: auto;
-        height: auto;
-        padding: 5% 50% 0% 0%;
+        width: 70%;
+        height: 80%;
+        padding-bottom: 15px;
         margin: 0% 0% 0% 0%;
         color: var(--paper-item-icon-color, #fdd835);
         --mdc-icon-size: 100%;
-        align-items: left;
       }
 
       ha-icon + span {
@@ -281,47 +272,33 @@ export class HuiButtonCard extends LitElement implements LovelaceCard {
       }
 
       .state {
-        margin: 0% 50% 5% 0%;
-        padding: 0%; 100% 10% 0%;
+        /*margin: 0% 50% 5% 0%;*/
+        padding: 0% 100% 10% 0%;
         text-align: left;
       }
 
       span {
-        margin: 5% 50% 1% 0%;
+        /*margin: 5% 50% 1% 0%;*/
         padding: 0% 100% 1% 0%;
+      }
+
+      .divibut{
+        padding-bottom: 0%;
+        margin-bottom: 0%;
       }
 
       ha-icon,
       span {
         outline: none;
       }
-      // .state-on {
-      //   background: rgb(255,255,255);
-      //   color: black;
-      // }
-
-      .hassbut.state-on {
-        padding: 5% 5% 5% 5%;
-        text-align: left;
-      }
-
-      .hassbut.state-off {
-        padding: 5% 5% 5% 5%;
-        text-align: left;
-      }
-
-      .hassbut {
-        display: grid;
-        grid-template-columns: 50% 50%;
-      }
 
       .state-div {
-        padding: 5px 0px 5px 10px;
+        padding: 0% 100% 10% 0%;
         align-items: left;
       }
 
       .name-div {
-        padding: 5px 0px 0px 10px;
+        padding: 0% 100% 1% 0%;
         align-items: left;
       }
     `,

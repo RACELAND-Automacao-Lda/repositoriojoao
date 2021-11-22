@@ -100,8 +100,8 @@ export class HuiLightCard extends LitElement implements LovelaceCard {
       <ha-card>
       <ha-card
       class="hasscard ${classMap({
-        "state-on": stateObj.state === "on",
-      })}"
+      "state-on": stateObj.state === "on",
+    })}"
       >
         <mwc-icon-button
           class="more-info"
@@ -126,28 +126,28 @@ export class HuiLightCard extends LitElement implements LovelaceCard {
                 @value-changing=${this._dragEvent}
                 @value-changed=${this._setBrightness}
                 style=${styleMap({
-                  visibility: lightSupportsDimming(stateObj)
-                    ? "visible"
-                    : "hidden",
-                })}
+      visibility: lightSupportsDimming(stateObj)
+        ? "visible"
+        : "hidden",
+    })}
               ></round-slider>
               <ha-icon-button
                 class="light-button ${classMap({
-                  "slider-center": lightSupportsDimming(stateObj),
-                  "state-on": stateObj.state === "on",
-                  "state-unavailable": stateObj.state === UNAVAILABLE,
-                })}"
+      "slider-center": lightSupportsDimming(stateObj),
+      "state-on": stateObj.state === "on",
+      "state-unavailable": stateObj.state === UNAVAILABLE,
+    })}"
                 .icon=${this._config.icon || stateIcon(stateObj)}
                 .disabled=${UNAVAILABLE_STATES.includes(stateObj.state)}
                 style=${styleMap({
-                  filter: this._computeBrightness(stateObj),
-                  color: this._computeColor(stateObj),
-                })}
+      filter: this._computeBrightness(stateObj),
+      color: this._computeColor(stateObj),
+    })}
                 @action=${this._handleAction}
                 .actionHandler=${actionHandler({
-                  hasHold: hasAction(this._config!.hold_action),
-                  hasDoubleClick: hasAction(this._config!.double_tap_action),
-                })}
+      hasHold: hasAction(this._config!.hold_action),
+      hasDoubleClick: hasAction(this._config!.double_tap_action),
+    })}
                 tabindex="0"
               ></ha-icon-button>
             </div>
@@ -155,16 +155,16 @@ export class HuiLightCard extends LitElement implements LovelaceCard {
 
           <div id="info">
             ${UNAVAILABLE_STATES.includes(stateObj.state)
-              ? html`
+        ? html`
                   <div>
                     ${computeStateDisplay(
-                      this.hass.localize,
-                      stateObj,
-                      this.hass.locale
-                    )}
+          this.hass.localize,
+          stateObj,
+          this.hass.locale
+        )}
                   </div>
                 `
-              : html` <div class="brightness">%</div> `}
+        : html` <div class="brightness">%</div> `}
             ${this._config.name || computeStateName(stateObj)}
           </div>
         </div>
@@ -267,104 +267,89 @@ export class HuiLightCard extends LitElement implements LovelaceCard {
   static get styles(): CSSResultGroup {
     return css`
     ha-card {
+      width: 100%;
       height: 100%;
-      align-items: center;
-      display: flex;
-      flex-direction: column;
       box-sizing: border-box;
-      border-radius: 25px;
-      background: rgba(53,53,56,0.5);
       position: relative;
       overflow: hidden;
       text-align: center;
       --name-font-size: 1.2rem;
       --brightness-font-size: 1.2rem;
-      }
-      .more-info {
-        position: absolute;
-        cursor: pointer;
-        top: 0;
-        right: 0;
-        border-radius: 100%;
-        color: var(--secondary-text-color);
-        z-index: 1;
-      }
-      .content {
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        padding: 0% 100% 0% 100%;
-        justify-content: center;
-      }
-      #controls {
-        display: flex;
-        justify-content: center;
-        padding: 16px 150px 16px 150px;
-        position: relative;
-      }
-      #info {
-        text-align: center;
-        margin-top: -56px;
-        padding: 16px;
-        font-size: var(--name-font-size);
-      }
-      #slider {
-        height: 100%;
-        width: 100%;
-        position: relative;
-        max-width: 200px;
-        min-width: 100px;
-      }
-      round-slider {
-        --round-slider-path-color: var(--slider-track-color);
-        --round-slider-bar-color: var(--primary-color);
-        //padding-bottom: 5px;
-        padding: 20px 10px 10px 10px 10px;
-      }
-      .light-button {
-        color: var(--paper-item-icon-color, #44739e);
-        width: 60%;
-        height: auto;
-        position: absolute;
-        max-width: calc(100% - 40px);
-        box-sizing: border-box;
-        border-radius: 100%;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        --mdc-icon-button-size: 100%;
-        --mdc-icon-size: 100%;
-      }
-      .light-button.state-on {
-        color: var(--paper-item-icon-active-color, #fdd835);
-        background: rgb(255,255,255);
-        color: #fdd835;
-      }
-      .light-button.state-unavailable {
-        color: var(--state-icon-unavailable-color);
-      }
-      .state-on {
-        background: rgb(255,255,255);
-        color: black;
-      }
-      .state-off {
-        background: rgb(0,0,0);
-        color: white;
-      }
-      .brightness {
-        font-size: var(--brightness-font-size);
-        opacity: 0;
-        transition: opacity 0.5s ease-in-out;
-        -moz-transition: opacity 0.5s ease-in-out;
-        -webkit-transition: opacity 0.5s ease-in-out;
-      }
-      .show_brightness {
-        opacity: 1;
-      }
-    `;
+      border-radius: 25px;
+      background-color: rgba(53,53,53,0.5);
+    }
+    .more-info {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      right: 0;
+      border-radius: 100%;
+      color: var(--secondary-text-color);
+      z-index: 1;
+    }
+    .content {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    #controls {
+      display: flex;
+      justify-content: center;
+      padding: 16px;
+      position: relative;
+    }
+    #slider {
+      height: 100%;
+      width: 100%;
+      position: relative;
+      max-width: 200px;
+      min-width: 100px;
+    }
+    round-slider {
+      --round-slider-path-color: var(--slider-track-color);
+      --round-slider-bar-color: var(--primary-color);
+      padding-bottom: 10%;
+    }
+    .light-button {
+      color: var(--paper-item-icon-color, #44739e);
+      width: 60%;
+      height: auto;
+      position: absolute;
+      max-width: calc(100% - 40px);
+      box-sizing: border-box;
+      border-radius: 100%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      --mdc-icon-button-size: 100%;
+      --mdc-icon-size: 100%;
+    }
+    .light-button.state-on {
+      color: var(--paper-item-icon-active-color, #fdd835);
+    }
+    .light-button.state-unavailable {
+      color: var(--state-icon-unavailable-color);
+    }
+    #info {
+      text-align: center;
+      margin-top: -56px;
+      padding: 16px;
+      font-size: var(--name-font-size);
+    }
+    .brightness {
+      font-size: var(--brightness-font-size);
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+      -moz-transition: opacity 0.5s ease-in-out;
+      -webkit-transition: opacity 0.5s ease-in-out;
+    }
+    .show_brightness {
+      opacity: 1;
+    }
+  `;
   }
 }
-
 
 declare global {
   interface HTMLElementTagNameMap {

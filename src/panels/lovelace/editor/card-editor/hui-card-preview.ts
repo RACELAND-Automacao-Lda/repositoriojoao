@@ -10,11 +10,9 @@ import { LovelaceCard } from "../../types";
 
 export class HuiCardPreview extends ReactiveElement {
   @property({ attribute: false }) public hass?: HomeAssistant;
-
   @property() public config?: LovelaceCardConfig;
 
   private _element?: LovelaceCard;
-
   private get _error() {
     return this._element?.tagName === "HUI-ERROR-CARD";
   }
@@ -35,30 +33,24 @@ export class HuiCardPreview extends ReactiveElement {
 
   protected update(changedProperties: PropertyValues) {
     super.update(changedProperties);
-
     if (changedProperties.has("config")) {
       const oldConfig = changedProperties.get("config") as
         | undefined
         | LovelaceCardConfig;
-
       if (!this.config) {
         this._cleanup();
         return;
       }
-
       if (!this.config.type) {
         this._createCard(
           createErrorCardConfig("No card type found", this.config)
         );
         return;
       }
-
       if (!this._element) {
         this._createCard(this.config);
         return;
       }
-
-      // in case the element was an error element we always want to recreate it
       if (!this._error && oldConfig && this.config.type === oldConfig.type) {
         try {
           this._element.setConfig(this.config);
@@ -69,7 +61,6 @@ export class HuiCardPreview extends ReactiveElement {
         this._createCard(this.config);
       }
     }
-
     if (changedProperties.has("hass")) {
       const oldHass = changedProperties.get("hass") as
         | HomeAssistant
@@ -77,7 +68,6 @@ export class HuiCardPreview extends ReactiveElement {
       if (!oldHass || oldHass.language !== this.hass!.language) {
         this.style.direction = computeRTL(this.hass!) ? "rtl" : "ltr";
       }
-
       if (this._element) {
         this._element.hass = this.hass;
       }
@@ -87,11 +77,9 @@ export class HuiCardPreview extends ReactiveElement {
   private _createCard(configValue: LovelaceCardConfig): void {
     this._cleanup();
     this._element = createCardElement(configValue);
-
     if (this.hass) {
       this._element!.hass = this.hass;
     }
-
     this.appendChild(this._element!);
   }
 
