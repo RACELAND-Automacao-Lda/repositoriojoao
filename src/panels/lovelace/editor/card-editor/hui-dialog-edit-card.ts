@@ -450,7 +450,8 @@ export class HuiDialogEditCard
         .element-preview {
           position: relative;
           height: max-content;
-          background: var(--primary-background-color);
+          /*background: var(--primary-background-color, #949494);*/
+          background: #949494;
           padding: 4px;
           border-radius: 4px;
         }

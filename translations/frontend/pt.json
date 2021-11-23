@@ -1263,7 +1263,7 @@
                 },
                 "automation": {
                     "caption": "Automação",
-                    "description": "Criar regras comportamentais para a sua casa",
+                    "description": "Criar regras para a sua casa.",
                     "dialog_new": {
                         "blueprint": {
                             "use_blueprint": "Utilize o *blueprint*"
@@ -1880,7 +1880,7 @@
                     "attributes_override": "Pode substituí-los, se quiser.",
                     "attributes_set": "Os seguintes atributos de uma entidade são definidos por meio de programação.",
                     "caption": "Personalização",
-                    "description": "Personalizar as suas entidades",
+                    "description": "Personalizar as entidades.",
                     "different_include": "Possivelmente através de um domínio, um glob ou um include diferente.",
                     "pick_attribute": "Escolha um atributo para substituir.",
                     "picker": {
@@ -2444,7 +2444,7 @@
                     "confirm_delete": "Tens a certeza que queres eliminar esta pessoa?",
                     "confirm_delete2": "Todos os dispositivos pertencentes a esta pessoa não ficarão atribuidos a ninguém.",
                     "create_person": "Criar pessoa",
-                    "description": "Gerir as pessoas que o Raceland HA segue.",
+                    "description": "Gerir as pessoas do Raceland HA.",
                     "detail": {
                         "admin": "Administrador",
                         "allow_login": "Permitir login",
@@ -2662,7 +2662,7 @@
                         "password_not_match": "As palavras-passe não coincidem"
                     },
                     "caption": "Utilizadores",
-                    "description": "Gerir as contas de utilizador do Raceland HA",
+                    "description": "Gerir as contas de utilizadores do Raceland HA.",
                     "editor": {
                         "activate_user": "Ativar utilizador",
                         "active": "Ativo",
@@ -3162,7 +3162,7 @@
                         "button": {
                             "default_action_help": "A ação padrão depende dos recursos da entidade, ela será alternada ou mais informações serão mostradas.",
                             "description": "O Cartão de Botões permite-lhe adicionar botões para realizar tarefas.",
-                            "name": "Botão"
+                            "name": "Botão Genérico"
                         },
                         "calendar": {
                             "calendar_entities": "Entidades do calendário",
@@ -3300,7 +3300,7 @@
                         },
                         "light": {
                             "description": "O cartão Luz permite alterar o brilho da luz.",
-                            "name": "Luz"
+                            "name": "Luz Genérica"
                         },
                         "logbook": {
                             "description": "O cartão dos registos mostra a lista de eventos para as entidades",
@@ -3334,7 +3334,7 @@
                         },
                         "picture-glance": {
                             "description": "O cartão Vista de imagem  mostra uma imagem e os estados das entidades correspondentes como um ícone. As entidades do lado direito permitem alternar ações, outras mostram a opção mais informações.",
-                            "name": "Vista sobre imagem",
+                            "name": "Câmara",
                             "state_entity": "Estado da entidade"
                         },
                         "picture": {

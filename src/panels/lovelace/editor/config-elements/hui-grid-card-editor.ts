@@ -51,7 +51,7 @@ export class HuiGridCardEditor extends HuiStackCardEditor {
     return html`
       <div class="card-config">
         <div class="side-by-side">
-        <!--<paper-dropdown-menu
+        <paper-dropdown-menu
 
         .label="${this.hass.localize(
           "ui.panel.lovelace.editor.card.grid.columns"
@@ -71,8 +71,9 @@ export class HuiGridCardEditor extends HuiStackCardEditor {
         <paper-item .value=${3}>3 Colunas
         </paper-item>
         </paper-listbox>
-        </paper-dropdown-menu>-->
-        <paper-input
+        </paper-dropdown-menu>
+
+        <!--<paper-input
             .label="${this.hass.localize(
               "ui.panel.lovelace.editor.card.grid.columns"
             )} (${this.hass.localize(
@@ -82,7 +83,7 @@ export class HuiGridCardEditor extends HuiStackCardEditor {
             .value=${this._columns}
             .configValue=${"columns"}
             @value-changed=${this._handleColumnsChanged}
-          ></paper-input>
+          ></paper-input>-->
           <ha-formfield
             .label=${this.hass.localize(
               "ui.panel.lovelace.editor.card.grid.square"
@@ -106,11 +107,12 @@ export class HuiGridCardEditor extends HuiStackCardEditor {
     if (!this._config) {
       return;
     }
-    const value = Number(ev.target.value);
+    const value = Number(ev.detail.item.value);
+    console.log("evento", ev.detail.item.value);
     if (this._columns === value) {
       return;
     }
-    if (!ev.target.value) {
+    if (!ev.detail.item.value) {
       this._config = { ...this._config };
       delete this._config.columns;
     } else {

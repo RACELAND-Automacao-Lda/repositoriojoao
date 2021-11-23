@@ -2488,7 +2488,7 @@
                         },
                         "button": {
                             "description": "O cartão Botão permite adicionar botões para executar tarefas.",
-                            "name": "Botão"
+                            "name": "Botão Genérico"
                         },
                         "calendar": {
                             "name": "Calendário",

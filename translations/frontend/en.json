@@ -3608,7 +3608,7 @@
                         "panel_mode": "These badges will not be displayed because this view is in \"Panel Mode\"."
                     },
                     "edit_card": {
-                        "add": "Add Card",
+                        "add": "Adicionar",
                         "clear": "Clear",
                         "confirm_cancel": "Are you sure you want to cancel?",
                         "delete": "Delete card",

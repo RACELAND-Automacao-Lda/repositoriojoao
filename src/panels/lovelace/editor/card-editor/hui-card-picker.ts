@@ -1,14 +1,7 @@
 import "@material/mwc-tab-bar/mwc-tab-bar";
 import "@material/mwc-tab/mwc-tab";
 import Fuse from "fuse.js";
-import {
-  css,
-  CSSResultGroup,
-  html,
-  LitElement,
-  PropertyValues,
-  TemplateResult,
-} from "lit";
+import { css, CSSResultGroup, html, LitElement, PropertyValues, TemplateResult } from "lit";
 import { customElement, property, state } from "lit/decorators";
 import { classMap } from "lit/directives/class-map";
 import { styleMap } from "lit/directives/style-map";
@@ -18,21 +11,10 @@ import { fireEvent } from "../../../../common/dom/fire_event";
 import "../../../../common/search/search-input";
 import "../../../../components/ha-circular-progress";
 import { UNAVAILABLE_STATES } from "../../../../data/entity";
-import type {
-  LovelaceCardConfig,
-  LovelaceConfig,
-} from "../../../../data/lovelace";
-import {
-  CustomCardEntry,
-  customCards,
-  CUSTOM_TYPE_PREFIX,
-  getCustomCardEntry,
-} from "../../../../data/lovelace_custom_cards";
+import type { LovelaceCardConfig, LovelaceConfig } from "../../../../data/lovelace";
+import { CustomCardEntry, customCards, CUSTOM_TYPE_PREFIX, getCustomCardEntry } from "../../../../data/lovelace_custom_cards";
 import type { HomeAssistant } from "../../../../types";
-import {
-  calcUnusedEntities,
-  computeUsedEntities,
-} from "../../common/compute-unused-entities";
+import { calcUnusedEntities, computeUsedEntities } from "../../common/compute-unused-entities";
 import { tryCreateCardElement } from "../../create-element/create-card-element";
 import type { LovelaceCard } from "../../types";
 import { getCardStubConfig } from "../get-card-stub-config";
@@ -325,7 +307,8 @@ export class HuiCardPicker extends LitElement {
           display: flex;
           flex-direction: column;
           border-radius: var(--ha-card-border-radius, 4px);
-          background: var(--primary-background-color, #fafafa);
+          background: var(--pri-background-color, #fafafa); //alterar nos yamls
+          /*background: #949494;*/
           cursor: pointer;
           position: relative;
         }
@@ -354,7 +337,7 @@ export class HuiCardPicker extends LitElement {
           border-radius: 25px;
           width: 100%;
           height: 100%;
-          padding-top: 10px;
+          padding: 10px 0px 10px 0px;
 
         }
         .preview > :first-child {

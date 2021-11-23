@@ -8,6 +8,8 @@ import { GraphHeaderFooterConfig } from "../header-footer/types";
 import { LovelaceCardEditor } from "../types";
 import { HuiEntityCard } from "./hui-entity-card";
 import { EntityCardConfig, SensorCardConfig } from "./types";
+// import { iconColorCSS } from "../../../common/style/icon_color_css";
+// import { get } from "@polymer/polymer/lib/utils/path";
 
 const includeDomains = ["counter", "input_number", "number", "sensor"];
 
@@ -72,14 +74,17 @@ class HuiSensorCard extends HuiEntityCard {
 }
 
 // static get styles(): CSSResultGroup {
-//   return css`
-//   ha-card {
-//     border-radius: 28px;
-//     background: rgba(53,53,56,0.7);
-
-//   }
-//   `;
+//   return [
+//     iconColorCSS,
+//     css`
+//     ha-card {
+//       border-radius: 25px;
+//       background-color: rgba(53,53,56,0.8);
+//     }
+//   `,
+//   ];
 // }
+
 declare global {
   interface HTMLElementTagNameMap {
     "hui-sensor-card": HuiSensorCard;

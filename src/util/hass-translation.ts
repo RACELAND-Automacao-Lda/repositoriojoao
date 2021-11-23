@@ -107,7 +107,7 @@ export function getLocalLanguage() {
     return language;
   }
   // Final fallback
-  return "en";
+  return "pt";
 }
 
 export const getTranslation = (fragment: string | null, language: string) =>

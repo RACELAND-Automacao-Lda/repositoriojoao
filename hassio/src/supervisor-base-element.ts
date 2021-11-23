@@ -46,7 +46,7 @@ export class SupervisorBaseElement extends urlSyncMixin(
 
   @state() private _collections: Record<string, Collection<unknown>> = {};
 
-  @state() private _language = "en";
+  @state() private _language = "pt";
 
   public connectedCallback(): void {
     super.connectedCallback();

@@ -25,8 +25,8 @@ export async function getTranslation(
 ) {
   const metadata = translationMetadata.translations[language];
   if (!metadata) {
-    if (language !== "en") {
-      return getTranslation(fragment, "en", base_url);
+    if (language !== "pt") {
+      return getTranslation(fragment, "pt", base_url);
     }
     throw new Error("Language en is not found in metadata");
   }
@@ -45,9 +45,9 @@ export async function getTranslation(
       .then((data) => ({ language, data }))
       .catch((error) => {
         delete translations[fingerprint];
-        if (language !== "en") {
+        if (language !== "pt") {
           // Couldn't load selected translation. Try a fall back to en before failing.
-          return getTranslation(fragment, "en", base_url);
+          return getTranslation(fragment, "pt", base_url);
         }
         return Promise.reject(error);
       });

@@ -80,7 +80,7 @@ export class BaseLayout extends LitElement {
   _render_fab() {
     if (!this.lovelace?.editMode === true) return html``;
     return html`
-      <ha-fab .label=${"Add card"} extended @click=${this._addCard}>
+      <ha-fab .label=${"Adicionar"} extended @click=${this._addCard}>
         <ha-icon slot="icon" .icon=${"mdi:plus"}></ha-icon>
       </ha-fab>
     `;

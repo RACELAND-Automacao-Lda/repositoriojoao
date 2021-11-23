@@ -44,7 +44,7 @@ export const polyfillsLoaded = polyfillLoaded
       loadedPolyfillLocale = new Set();
       polyfillLoaded = true;
       // Load English so it becomes the default
-      return loadPolyfillLocales("en");
+      return loadPolyfillLocales("pt");
     });
 
 /**
