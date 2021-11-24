@@ -9,11 +9,7 @@ import "../../../../components/ha-switch";
 import { LovelaceViewConfig } from "../../../../data/lovelace";
 import { HomeAssistant } from "../../../../types";
 import "../../components/hui-theme-select-editor";
-import {
-  DEFAULT_VIEW_LAYOUT,
-  PANEL_VIEW_LAYOUT,
-  SIDEBAR_VIEW_LAYOUT,
-} from "../../views/const";
+import { DEFAULT_VIEW_LAYOUT, PANEL_VIEW_LAYOUT, SIDEBAR_VIEW_LAYOUT } from "../../views/const";
 import { configElementStyle } from "../config-elements/config-elements-style";
 import { EditorTarget } from "../types";
 

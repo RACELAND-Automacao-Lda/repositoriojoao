@@ -94,6 +94,7 @@ export class EnergyGridSettings extends LitElement {
               href=${documentationUrl(
                 this.hass,
                 "/docs/energy/electricity-grid/"
+                // "https://automacaoraceland.pt/docs-domotica/"
               )}
               >${this.hass.localize(
                 "ui.panel.config.energy.grid.learn_more"

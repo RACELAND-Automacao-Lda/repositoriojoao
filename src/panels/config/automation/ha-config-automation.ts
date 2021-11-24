@@ -22,7 +22,7 @@ const equal = (a: AutomationEntity[], b: AutomationEntity[]): boolean => {
   return a.every((automation, index) => automation === b[index]);
 };
 
-const excludeAutomations = ["automation.themes","automation.avaiable_wallpaper_update","automation.avaiable_wallpaper_update_on_ha_start","automation.create_dashboard","automation.delete_dashboard","automation.populate_view_input_select_after_picking_a_dashboard","automation.update_dropdown_menu_in_for_dashboards_when_a_dashboard_file_is_created","automation.update_dropdown_menu_in_for_dashboards_when_a_dashboard_file_is_moved","automation.update_dropdown_menu_in_import_dashboard_when_ha_starts","automation.wallpaper_selector","automation.update_dropdown_menu_in_for_dashboards_when_a_dashboard_file_is_deleted"];
+const excludeAutomations = ["automation.themes","automation.set_theme_at_startup","automation.avaiable_wallpaper_update","automation.avaiable_wallpaper_update_on_ha_start","automation.create_dashboard","automation.delete_dashboard","automation.populate_view_input_select_after_picking_a_dashboard","automation.update_dropdown_menu_in_for_dashboards_when_a_dashboard_file_is_created","automation.update_dropdown_menu_in_for_dashboards_when_a_dashboard_file_is_moved","automation.update_dropdown_menu_in_import_dashboard_when_ha_starts","automation.wallpaper_selector","automation.update_dropdown_menu_in_for_dashboards_when_a_dashboard_file_is_deleted"];
 
 @customElement("ha-config-automation")
 class HaConfigAutomation extends HassRouterPage {
