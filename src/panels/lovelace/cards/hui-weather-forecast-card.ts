@@ -404,7 +404,8 @@ class HuiWeatherForecastCard extends LitElement implements LovelaceCard {
           padding: 16px;
           box-sizing: border-box;
           border-radius: 25px;
-          background: rgba(48, 48, 51, 0.7);
+          background: var(--card-color-background, rgba(53,53,53,0.9));
+          color: var(--card-color-text, white);
         }
 
         .content {

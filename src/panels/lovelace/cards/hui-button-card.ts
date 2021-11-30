@@ -251,8 +251,8 @@ export class HuiButtonCard extends LitElement implements LovelaceCard {
         box-sizing: border-box;
         justify-content: center;
         position: relative;
-        background-color: rgba(53,53,53,0.8);
-        color: white;
+        background: var(--card-color-background, rgba(53,53,53,0.9));
+        color: var(--card-color-text, white);
         border-radius: 25px;
         overflow: hidden;
         grid-template-columns: 50% 50%;
@@ -272,13 +272,11 @@ export class HuiButtonCard extends LitElement implements LovelaceCard {
       }
 
       .state {
-        /*margin: 0% 50% 5% 0%;*/
         padding: 0% 100% 10% 0%;
         text-align: left;
       }
 
       span {
-        /*margin: 5% 50% 1% 0%;*/
         padding: 0% 100% 1% 0%;
       }
 

@@ -276,7 +276,8 @@ export class HuiLightCard extends LitElement implements LovelaceCard {
       --name-font-size: 1.2rem;
       --brightness-font-size: 1.2rem;
       border-radius: 25px;
-      background-color: rgba(53,53,53,0.5);
+      background: var(--card-color-background, rgba(53,53,53,0.5));
+      color: var(--card-color-text, white);
     }
     .more-info {
       position: absolute;
