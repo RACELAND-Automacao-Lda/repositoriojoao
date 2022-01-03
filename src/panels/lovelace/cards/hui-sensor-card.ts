@@ -73,18 +73,6 @@ class HuiSensorCard extends HuiEntityCard {
   }
 }
 
-// static get styles(): CSSResultGroup {
-//   return [
-//     iconColorCSS,
-//     css`
-//     ha-card {
-//       border-radius: 25px;
-//       background-color: rgba(53,53,56,0.8);
-//     }
-//   `,
-//   ];
-// }
-
 declare global {
   interface HTMLElementTagNameMap {
     "hui-sensor-card": HuiSensorCard;
