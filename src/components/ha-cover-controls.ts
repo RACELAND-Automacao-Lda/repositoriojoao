@@ -1,12 +1,5 @@
 import type { HassEntity } from "home-assistant-js-websocket";
-import {
-  css,
-  CSSResultGroup,
-  html,
-  LitElement,
-  PropertyValues,
-  TemplateResult,
-} from "lit";
+import { css, CSSResultGroup, html, LitElement, PropertyValues, TemplateResult } from "lit";
 import { customElement, property, state } from "lit/decorators";
 import { classMap } from "lit/directives/class-map";
 import { computeCloseIcon, computeOpenIcon } from "../common/entity/cover_icon";
@@ -18,9 +11,7 @@ import "./ha-icon-button";
 @customElement("ha-cover-controls")
 class HaCoverControls extends LitElement {
   @property({ attribute: false }) public hass!: HomeAssistant;
-
   @property({ attribute: false }) public stateObj!: HassEntity;
-
   @state() private _entityObj?: CoverEntity;
 
   public willUpdate(changedProperties: PropertyValues): void {
